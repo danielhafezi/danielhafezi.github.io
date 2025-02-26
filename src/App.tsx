@@ -58,7 +58,7 @@ function App() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-blue-400 hover:text-blue-300"
                   >
-                    Available on Hugging Face
+                    Model Available on Hugging Face
                     <ExternalLink size={16} className="ml-1" />
                   </a>
                   <a 
