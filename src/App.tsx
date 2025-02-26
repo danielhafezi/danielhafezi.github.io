@@ -23,7 +23,7 @@ function App() {
       <section id="home" className="bg-gray-800 py-16">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-4xl font-bold mb-4">Daniel Hafezian | Full Stack Developer</h1>
-          <p className="text-xl text-gray-400">A collection of AI projects and applications. A work in progress.</p>
+          <p className="text-xl text-gray-400">A collection of projects and applications. A work in progress.</p>
         </div>
       </section>
 
