@@ -73,7 +73,7 @@ function App() {
                 </div>
               </div>
               <img 
-                src="/app_overview.png" 
+                src="./app_overview.png" 
                 alt="Essay Evaluator Overview" 
                 className="w-full h-auto object-cover border-t border-gray-700"
               />
@@ -167,7 +167,7 @@ function App() {
           <div id="about" className="lg:w-1/3">
             <div className="bg-gray-800 rounded-lg overflow-hidden sticky top-6">
               <img 
-                src="/ProfilePicture.jpg" 
+                src="./ProfilePicture.jpg" 
                 alt="Daniel Hafezian" 
                 className="w-full h-64 object-cover"
               />
