@@ -23,7 +23,7 @@ function App() {
       <section id="home" className="bg-gray-800 py-16">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-4xl font-bold mb-4">Daniel Hafezian | Full Stack Developer</h1>
-          <p className="text-xl text-gray-400">A collection of AI projects and applications. A work in progress.</p>
+          <p className="text-xl text-gray-400">A collection of projects and applications. A work in progress.</p>
         </div>
       </section>
 
@@ -79,7 +79,43 @@ function App() {
               />
             </div>
 
-            {/* Project 2 - ScholarshipScout */}
+            {/* Project 2 - GradPathAI */}
+            <div className="bg-gray-800 rounded-lg overflow-hidden">
+              <div className="p-6">
+                <h2 className="text-2xl font-bold text-blue-400 mb-4">GradPathAI: University Application Assistant</h2>
+                <p className="mb-4">
+                  AI-powered tools to assist students with university applications, delivering personalized recommendations through multi-agent AI systems.
+                </p>
+                <p className="mb-4">
+                  Built with Next.js, TypeScript, and LangChain JS/LangGraph JS, GradPathAI helps students navigate the complex university application process with AI-driven guidance.
+                </p>
+                <div className="mb-4">
+                  <h3 className="text-lg font-semibold mb-2">Technologies and libraries:</h3>
+                  <ul className="list-disc pl-5 space-y-1">
+                    <li>Next.js & TypeScript: Core application framework</li>
+                    <li>LangChain JS & LangGraph JS: Multi-agent AI orchestration</li>
+                    <li>Azure: Cloud deployment with CI/CD pipelines</li>
+                    <li>Microsoft for Startups & NVIDIA Inception Program: Strategic partnerships</li>
+                  </ul>
+                </div>
+                <a 
+                  href="https://gradpathai.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-blue-400 hover:text-blue-300"
+                >
+                  Visit GradPathAI
+                  <ExternalLink size={16} className="ml-1" />
+                </a>
+              </div>
+              <img 
+                src="./landing.png" 
+                alt="GradPathAI Landing Page" 
+                className="w-full h-auto object-cover border-t border-gray-700"
+              />
+            </div>
+
+            {/* Project 3 - ScholarshipScout */}
             <div className="bg-gray-800 rounded-lg overflow-hidden">
               <div className="p-6">
                 <h2 className="text-2xl font-bold text-blue-400 mb-4">ScholarshipScout: Multi-Agent AI Web Scraper</h2>
@@ -116,7 +152,7 @@ function App() {
               />
             </div>
 
-            {/* Project 3 - JobMatchCV */}
+            {/* Project 4 - JobMatchCV */}
             <div className="bg-gray-800 rounded-lg overflow-hidden">
               <div className="p-6">
                 <h2 className="text-2xl font-bold text-blue-400 mb-4">JobMatchCV: AI-Powered Resume Optimizer</h2>
@@ -174,7 +210,7 @@ function App() {
               <div className="p-6">
                 <h2 className="text-2xl font-bold mb-4">About Me</h2>
                 <p className="mb-6">
-                  Hi, I'm Daniel Hafezian. I'm a full-stack developer specializing in rapid web and AI application deployment using modern AI-first tools.
+                Hi, I'm Daniel Hafezian. I'm a full-stack developer specializing in rapid web and AI application deployment using modern AI-first tools.
                 </p>
                 
                 {/* Changed order - Toolset now comes before Professional Experience */}
