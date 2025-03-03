@@ -1,9 +1,42 @@
 import React, { useEffect, useState } from 'react';
 import { Github, Linkedin, Mail, Phone, ExternalLink, Briefcase, Info, Sun, Moon, Menu, X } from 'lucide-react';
 
+interface ImageModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  imageSrc: string;
+  imageAlt: string;
+}
+
+// Modal component
+function ImageModal({ isOpen, onClose, imageSrc, imageAlt }: ImageModalProps) {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4" onClick={onClose}>
+      <div className="max-w-[90vw] max-h-[90vh] relative">
+        <button
+          onClick={onClose}
+          className="absolute -top-10 right-0 text-white hover:text-gray-300 focus:outline-none"
+          aria-label="Close modal"
+        >
+          <X size={24} />
+        </button>
+        <img
+          src={imageSrc}
+          alt={imageAlt}
+          className="max-w-full max-h-[85vh] object-contain"
+          onClick={(e) => e.stopPropagation()}
+        />
+      </div>
+    </div>
+  );
+}
+
 function App() {
   const [isDark, setIsDark] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [modalImage, setModalImage] = useState({ isOpen: false, src: '', alt: '' });
 
   useEffect(() => {
     if (isDark) {
@@ -19,6 +52,14 @@ function App() {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const openImageModal = (src: string, alt: string) => {
+    setModalImage({ isOpen: true, src, alt });
+  };
+
+  const closeImageModal = () => {
+    setModalImage({ isOpen: false, src: '', alt: '' });
   };
 
   return (
@@ -113,7 +154,8 @@ function App() {
               <img 
                 src="./app_overview.png" 
                 alt="Essay Evaluator Overview" 
-                className="w-full h-auto object-cover border-t border-gray-700"
+                className="w-full h-auto object-cover border-t border-gray-700 cursor-pointer hover:opacity-90 transition-opacity"
+                onClick={() => openImageModal("./app_overview.png", "Essay Evaluator Overview")}
               />
             </div>
 
@@ -154,12 +196,14 @@ function App() {
                   <img 
                     src="https://raw.githubusercontent.com/DanielHafezi/BetaAnalysisTool/main/market_analysis.png" 
                     alt="Market Analysis Dashboard" 
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                    onClick={() => openImageModal("https://raw.githubusercontent.com/DanielHafezi/BetaAnalysisTool/main/market_analysis.png", "Market Analysis Dashboard")}
                   />
                   <img 
                     src="https://raw.githubusercontent.com/DanielHafezi/BetaAnalysisTool/main/ticker_analysis.png" 
                     alt="Ticker Analysis Dashboard" 
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                    onClick={() => openImageModal("https://raw.githubusercontent.com/DanielHafezi/BetaAnalysisTool/main/ticker_analysis.png", "Ticker Analysis Dashboard")}
                   />
                 </div>
               </div>
@@ -197,7 +241,8 @@ function App() {
               <img 
                 src="./landing.png" 
                 alt="GradPathAI Landing Page" 
-                className="w-full h-auto object-cover border-t border-gray-700"
+                className="w-full h-auto object-cover border-t border-gray-700 cursor-pointer hover:opacity-90 transition-opacity"
+                onClick={() => openImageModal("./landing.png", "GradPathAI Landing Page")}
               />
             </div>
 
@@ -245,7 +290,8 @@ function App() {
               <img 
                 src="https://raw.githubusercontent.com/DanielHafezi/StaffWorkloadManager/main/project_overview.png" 
                 alt="Staff Workload Manager Screenshot" 
-                className="w-full h-auto object-cover border-t border-gray-700"
+                className="w-full h-auto object-cover border-t border-gray-700 cursor-pointer hover:opacity-90 transition-opacity"
+                onClick={() => openImageModal("https://raw.githubusercontent.com/DanielHafezi/StaffWorkloadManager/main/project_overview.png", "Staff Workload Manager Screenshot")}
               />
             </div>
 
@@ -275,14 +321,15 @@ function App() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-blue-400 hover:text-blue-300"
                 >
-                  View on GitHub
+                  Available on GitHub
                   <ExternalLink size={16} className="ml-1" />
                 </a>
               </div>
               <img 
                 src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
                 alt="ScholarshipScout Web Scraper" 
-                className="w-full h-64 object-cover border-t border-gray-700"
+                className="w-full h-64 object-cover border-t border-gray-700 cursor-pointer hover:opacity-90 transition-opacity"
+                onClick={() => openImageModal("https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80", "ScholarshipScout Web Scraper")}
               />
             </div>
 
@@ -331,7 +378,8 @@ function App() {
               <img 
                 src="https://raw.githubusercontent.com/DanielHafezi/PremierPulse/master/project_overview.png" 
                 alt="Premier Pulse Screenshot" 
-                className="w-full h-auto object-cover border-t border-gray-700"
+                className="w-full h-auto object-cover border-t border-gray-700 cursor-pointer hover:opacity-90 transition-opacity"
+                onClick={() => openImageModal("https://raw.githubusercontent.com/DanielHafezi/PremierPulse/master/project_overview.png", "Premier Pulse Screenshot")}
               />
             </div>
 
@@ -370,14 +418,15 @@ function App() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-blue-400 hover:text-blue-300"
                 >
-                  View on GitHub
+                  Available on GitHub
                   <ExternalLink size={16} className="ml-1" />
                 </a>
               </div>
               <img 
                 src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
                 alt="JobMatchCV Resume Optimizer" 
-                className="w-full h-64 object-cover border-t border-gray-700"
+                className="w-full h-64 object-cover border-t border-gray-700 cursor-pointer hover:opacity-90 transition-opacity"
+                onClick={() => openImageModal("https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80", "JobMatchCV Resume Optimizer")}
               />
             </div>
           </div>
@@ -388,7 +437,8 @@ function App() {
               <img 
                 src="./ProfilePicture.jpg" 
                 alt="Daniel Hafezian" 
-                className="w-full h-64 object-cover"
+                className="w-full h-64 object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                onClick={() => openImageModal("./ProfilePicture.jpg", "Daniel Hafezian")}
               />
               <div className="p-6">
                 <h2 className="text-2xl font-bold mb-4">About Me</h2>
@@ -454,6 +504,13 @@ function App() {
           </div>
         </div>
       </main>
+      
+      <ImageModal
+        isOpen={modalImage.isOpen}
+        onClose={closeImageModal}
+        imageSrc={modalImage.src}
+        imageAlt={modalImage.alt}
+      />
       
       {/* Footer */}
       <footer className="bg-gray-100 dark:bg-black py-6">
