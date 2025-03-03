@@ -111,9 +111,19 @@ function App() {
                   </a>
                 </div>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-gray-700 p-6">
-                <img src="https://github.com/danielhafezi/BetaAnalysisTool/raw/main/market_analysis.png" alt="Market Analysis Dashboard" className="w-full rounded-lg" />
-                <img src="https://github.com/danielhafezi/BetaAnalysisTool/raw/main/ticker_analysis.png" alt="Ticker Analysis Dashboard" className="w-full rounded-lg" />
+              <div className="border-t border-gray-700">
+                <div className="grid grid-cols-2 divide-x divide-gray-700">
+                  <img 
+                    src="https://github.com/danielhafezi/BetaAnalysisTool/raw/main/market_analysis.png" 
+                    alt="Market Analysis Dashboard" 
+                    className="w-full h-auto object-cover"
+                  />
+                  <img 
+                    src="https://github.com/danielhafezi/BetaAnalysisTool/raw/main/ticker_analysis.png" 
+                    alt="Ticker Analysis Dashboard" 
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
               </div>
             </div>
 
