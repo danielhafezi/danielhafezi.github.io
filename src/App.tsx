@@ -1,29 +1,67 @@
-import React from 'react';
-import { Github, Linkedin, Mail, Phone, ExternalLink, Briefcase, Info } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { Github, Linkedin, Mail, Phone, ExternalLink, Briefcase, Info, Sun, Moon, Menu, X } from 'lucide-react';
 
 function App() {
+  const [isDark, setIsDark] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDark]);
+
+  const toggleTheme = () => {
+    setIsDark(!isDark);
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-200">
+    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-200">
       {/* Header/Navigation */}
-      <header className="bg-black py-4">
+      <header className="bg-gray-100 dark:bg-black py-4 relative">
         <div className="container mx-auto px-6">
-          <nav>
-            <ul className="flex justify-center space-x-8">
-              <li><a href="#home" className="text-blue-400 hover:text-blue-300 transition-colors">Home</a></li>
-              <li><a href="#about" className="text-blue-400 hover:text-blue-300 transition-colors">About</a></li>
-              <li><a href="#projects" className="text-blue-400 hover:text-blue-300 transition-colors">Projects</a></li>
-              <li><a href="https://github.com/DanielHafezi" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors">GitHub Profile</a></li>
-              <li><a href="mailto:danielhafezian@gmail.com" className="text-blue-400 hover:text-blue-300 transition-colors">Contact</a></li>
+          <nav className="flex justify-between items-center">
+            {/* Mobile menu button */}
+            <button
+              onClick={toggleMenu}
+              className="md:hidden p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+
+            {/* Navigation links */}
+            <ul className={`md:flex md:space-x-8 ${isMenuOpen ? 'absolute left-0 right-0 top-full bg-gray-100 dark:bg-black p-4 space-y-4 shadow-lg md:shadow-none z-50' : 'hidden'} md:relative md:p-0 md:space-y-0 md:bg-transparent md:dark:bg-transparent md:flex`}>
+              <li><a href="#home" className="block text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 transition-colors" onClick={() => setIsMenuOpen(false)}>Home</a></li>
+              <li><a href="#about" className="block text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 transition-colors" onClick={() => setIsMenuOpen(false)}>About</a></li>
+              <li><a href="#projects" className="block text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 transition-colors" onClick={() => setIsMenuOpen(false)}>Projects</a></li>
+              <li><a href="https://github.com/DanielHafezi" target="_blank" rel="noopener noreferrer" className="block text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 transition-colors" onClick={() => setIsMenuOpen(false)}>GitHub Profile</a></li>
+              <li><a href="mailto:danielhafezian@gmail.com" className="block text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 transition-colors" onClick={() => setIsMenuOpen(false)}>Contact</a></li>
             </ul>
+
+            {/* Theme toggle button */}
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+              aria-label="Toggle theme"
+            >
+              {isDark ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
           </nav>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="bg-gray-800 py-16">
+      <section id="home" className="bg-gray-200 dark:bg-gray-800 py-16">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-4xl font-bold mb-4">Daniel Hafezian | Full Stack Developer</h1>
-          <p className="text-xl text-gray-400">A collection of projects and applications. A work in progress.</p>
+          <p className="text-xl text-gray-600 dark:text-gray-400">A collection of projects and applications. A work in progress.</p>
         </div>
       </section>
 
@@ -33,7 +71,7 @@ function App() {
           {/* Left Column - Projects */}
           <div className="lg:w-2/3 space-y-12">
             {/* Project 1 */}
-            <div id="projects" className="bg-gray-800 rounded-lg overflow-hidden">
+            <div id="projects" className="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden">
               <div className="p-6">
                 <h2 className="text-2xl font-bold text-blue-400 mb-4">EssayEvaluator: Automated Essay Scoring</h2>
                 <p className="mb-4">
@@ -80,7 +118,7 @@ function App() {
             </div>
 
             {/* Project 2 */}
-            <div className="bg-gray-800 rounded-lg overflow-hidden">
+            <div className="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden">
               <div className="p-6">
                 <h2 className="text-2xl font-bold text-blue-400 mb-4">BetaAnalysisTool: Crypto Market Analytics</h2>
                 <p className="mb-4">
@@ -114,12 +152,12 @@ function App() {
               <div className="border-t border-gray-700">
                 <div className="grid grid-cols-2 divide-x divide-gray-700">
                   <img 
-                    src="https://github.com/danielhafezi/BetaAnalysisTool/raw/main/market_analysis.png" 
+                    src="https://raw.githubusercontent.com/DanielHafezi/BetaAnalysisTool/main/market_analysis.png" 
                     alt="Market Analysis Dashboard" 
                     className="w-full h-auto object-cover"
                   />
                   <img 
-                    src="https://github.com/danielhafezi/BetaAnalysisTool/raw/main/ticker_analysis.png" 
+                    src="https://raw.githubusercontent.com/DanielHafezi/BetaAnalysisTool/main/ticker_analysis.png" 
                     alt="Ticker Analysis Dashboard" 
                     className="w-full h-auto object-cover"
                   />
@@ -128,7 +166,7 @@ function App() {
             </div>
 
             {/* Project 3 - GradPathAI */}
-            <div className="bg-gray-800 rounded-lg overflow-hidden">
+            <div className="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden">
               <div className="p-6">
                 <h2 className="text-2xl font-bold text-blue-400 mb-4">GradPathAI: University Application Assistant</h2>
                 <p className="mb-4">
@@ -164,13 +202,15 @@ function App() {
             </div>
 
             {/* Project 4 */}
-            <div className="bg-gray-800 rounded-lg overflow-hidden">
+            <div className="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden">
               <div className="p-6">
                 <div className="flex items-center mb-4">
                   <h2 className="text-2xl font-bold text-blue-400">StaffWorkloadManager: Academic Workload Management</h2>
                   <div className="relative ml-2 group">
                     <Info size={20} className="text-gray-400 hover:text-gray-300 cursor-help" />
-                    <div className="absolute hidden group-hover:block bg-gray-700 text-sm text-gray-200 px-3 py-2 rounded-md -right-4 transform translate-x-full w-64 z-10">
+                    <div className="absolute hidden group-hover:block bg-gray-700 text-sm text-gray-200 px-3 py-2 rounded-md z-10 w-64
+                      md:left-1/2 md:-translate-x-1/2 md:top-full md:mt-2
+                      left-auto right-0 top-full mt-1">
                       Final assignment of Visual Object Software MSc module, A+
                     </div>
                   </div>
@@ -203,14 +243,14 @@ function App() {
                 </div>
               </div>
               <img 
-                src="https://github.com/danielhafezi/StaffWorkloadManager/raw/main/project_overview.png" 
+                src="https://raw.githubusercontent.com/DanielHafezi/StaffWorkloadManager/main/project_overview.png" 
                 alt="Staff Workload Manager Screenshot" 
                 className="w-full h-auto object-cover border-t border-gray-700"
               />
             </div>
 
             {/* Project 5 - ScholarshipScout */}
-            <div className="bg-gray-800 rounded-lg overflow-hidden">
+            <div className="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden">
               <div className="p-6">
                 <h2 className="text-2xl font-bold text-blue-400 mb-4">ScholarshipScout: Multi-Agent AI Web Scraper</h2>
                 <p className="mb-4">
@@ -247,13 +287,15 @@ function App() {
             </div>
 
             {/* Project 6 */}
-            <div className="bg-gray-800 rounded-lg overflow-hidden">
+            <div className="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden">
               <div className="p-6">
                 <div className="flex items-center mb-4">
                   <h2 className="text-2xl font-bold text-blue-400">PremierPulse: Premier League Management and Reporting</h2>
                   <div className="relative ml-2 group">
                     <Info size={20} className="text-gray-400 hover:text-gray-300 cursor-help" />
-                    <div className="absolute hidden group-hover:block bg-gray-700 text-sm text-gray-200 px-3 py-2 rounded-md -right-4 transform translate-x-full w-64 z-10">
+                    <div className="absolute hidden group-hover:block bg-gray-700 text-sm text-gray-200 px-3 py-2 rounded-md z-10 w-64
+                      md:left-1/2 md:-translate-x-1/2 md:top-full md:mt-2
+                      left-auto right-0 top-full mt-1">
                       Final assignment of Web Development MSc module, A+
                     </div>
                   </div>
@@ -287,14 +329,14 @@ function App() {
                 </div>
               </div>
               <img 
-                src="https://github.com/danielhafezi/PremierPulse/raw/Main/project_overview.png" 
+                src="https://raw.githubusercontent.com/DanielHafezi/PremierPulse/master/project_overview.png" 
                 alt="Premier Pulse Screenshot" 
                 className="w-full h-auto object-cover border-t border-gray-700"
               />
             </div>
 
             {/* Project 7 - JobMatchCV */}
-            <div className="bg-gray-800 rounded-lg overflow-hidden">
+            <div className="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden">
               <div className="p-6">
                 <h2 className="text-2xl font-bold text-blue-400 mb-4">JobMatchCV: AI-Powered Resume Optimizer</h2>
                 <p className="mb-4">
@@ -342,7 +384,7 @@ function App() {
 
           {/* Right Column - About Me */}
           <div id="about" className="lg:w-1/3">
-            <div className="bg-gray-800 rounded-lg overflow-hidden sticky top-6">
+            <div className="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden sticky top-6">
               <img 
                 src="./ProfilePicture.jpg" 
                 alt="Daniel Hafezian" 
@@ -414,18 +456,18 @@ function App() {
       </main>
       
       {/* Footer */}
-      <footer className="bg-black py-6">
+      <footer className="bg-gray-100 dark:bg-black py-6">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-500 mb-4 md:mb-0">© {new Date().getFullYear()} Daniel Hafezian. All rights reserved.</p>
+            <p className="text-gray-600 dark:text-gray-500 mb-4 md:mb-0">© {new Date().getFullYear()} Daniel Hafezian. All rights reserved.</p>
             <div className="flex space-x-4">
-              <a href="https://github.com/DanielHafezi" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-blue-400">
+              <a href="https://github.com/DanielHafezi" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400">
                 <Github size={20} />
               </a>
-              <a href="https://www.linkedin.com/in/danielhafezi" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-blue-400">
+              <a href="https://www.linkedin.com/in/danielhafezi" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400">
                 <Linkedin size={20} />
               </a>
-              <a href="mailto:danielhafezian@gmail.com" className="text-gray-500 hover:text-blue-400">
+              <a href="mailto:danielhafezian@gmail.com" className="text-gray-600 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400">
                 <Mail size={20} />
               </a>
             </div>
