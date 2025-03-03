@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Mail, Phone, ExternalLink, Briefcase } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, ExternalLink, Briefcase, Info } from 'lucide-react';
 
 function App() {
   return (
@@ -79,7 +79,45 @@ function App() {
               />
             </div>
 
-            {/* Project 2 - GradPathAI */}
+            {/* Project 2 */}
+            <div className="bg-gray-800 rounded-lg overflow-hidden">
+              <div className="p-6">
+                <h2 className="text-2xl font-bold text-blue-400 mb-4">BetaAnalysisTool: Crypto Market Analytics</h2>
+                <p className="mb-4">
+                  A multi-stack application designed to analyze crypto market data and calculate beta values for digital assets.
+                </p>
+                <p className="mb-4">
+                  The tool provides interactive dashboards for crypto market analysis with beta pattern tracking, helping traders identify risk profiles across various digital assets.
+                </p>
+                <div className="mb-4">
+                  <h3 className="text-lg font-semibold mb-2">Technologies and libraries:</h3>
+                  <ul className="list-disc pl-5 space-y-1">
+                    <li>Python: Core data processing</li>
+                    <li>React: Frontend interface</li>
+                    <li>Pandas & NumPy: Data manipulation</li>
+                    <li>Streamlit & Plotly: Interactive visualizations</li>
+                    <li>CCXT: Cryptocurrency exchange data</li>
+                  </ul>
+                </div>
+                <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-2 sm:space-y-0">
+                  <a 
+                    href="https://github.com/danielhafezi/BetaAnalysisTool" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-blue-400 hover:text-blue-300"
+                  >
+                    Available on GitHub
+                    <ExternalLink size={16} className="ml-1" />
+                  </a>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-gray-700 p-6">
+                <img src="https://github.com/danielhafezi/BetaAnalysisTool/raw/main/market_analysis.png" alt="Market Analysis Dashboard" className="w-full rounded-lg" />
+                <img src="https://github.com/danielhafezi/BetaAnalysisTool/raw/main/ticker_analysis.png" alt="Ticker Analysis Dashboard" className="w-full rounded-lg" />
+              </div>
+            </div>
+
+            {/* Project 3 - GradPathAI */}
             <div className="bg-gray-800 rounded-lg overflow-hidden">
               <div className="p-6">
                 <h2 className="text-2xl font-bold text-blue-400 mb-4">GradPathAI: University Application Assistant</h2>
@@ -115,7 +153,53 @@ function App() {
               />
             </div>
 
-            {/* Project 3 - ScholarshipScout */}
+            {/* Project 4 */}
+            <div className="bg-gray-800 rounded-lg overflow-hidden">
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <h2 className="text-2xl font-bold text-blue-400">StaffWorkloadManager: Academic Workload Management</h2>
+                  <div className="relative ml-2 group">
+                    <Info size={20} className="text-gray-400 hover:text-gray-300 cursor-help" />
+                    <div className="absolute hidden group-hover:block bg-gray-700 text-sm text-gray-200 px-3 py-2 rounded-md -right-4 transform translate-x-full w-64 z-10">
+                      Final assignment of Visual Object Software MSc module, A+
+                    </div>
+                  </div>
+                </div>
+                <p className="mb-4">
+                  A JavaFX application for managing and calculating staff workloads in academic settings, ensuring compliance with contractual obligations and custom-defined activity rules.
+                </p>
+                <p className="mb-4">
+                  Originally developed as a console-based system, the application evolved into a user-friendly GUI that allows for tracking, validation, and visualization of workload distributions across different activity types and trimesters.
+                </p>
+                <div className="mb-4">
+                  <h3 className="text-lg font-semibold mb-2">Technologies and libraries:</h3>
+                  <ul className="list-disc pl-5 space-y-1">
+                    <li>Java: Core application logic</li>
+                    <li>JavaFX: GUI implementation</li>
+                    <li>Serialization: Data persistence</li>
+                    <li>JUnit: Testing framework</li>
+                  </ul>
+                </div>
+                <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-2 sm:space-y-0">
+                  <a 
+                    href="https://github.com/danielhafezi/StaffWorkloadManager" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-blue-400 hover:text-blue-300"
+                  >
+                    Available on GitHub
+                    <ExternalLink size={16} className="ml-1" />
+                  </a>
+                </div>
+              </div>
+              <img 
+                src="https://github.com/danielhafezi/StaffWorkloadManager/raw/main/project_overview.png" 
+                alt="Staff Workload Manager Screenshot" 
+                className="w-full h-auto object-cover border-t border-gray-700"
+              />
+            </div>
+
+            {/* Project 5 - ScholarshipScout */}
             <div className="bg-gray-800 rounded-lg overflow-hidden">
               <div className="p-6">
                 <h2 className="text-2xl font-bold text-blue-400 mb-4">ScholarshipScout: Multi-Agent AI Web Scraper</h2>
@@ -152,7 +236,54 @@ function App() {
               />
             </div>
 
-            {/* Project 4 - JobMatchCV */}
+            {/* Project 6 */}
+            <div className="bg-gray-800 rounded-lg overflow-hidden">
+              <div className="p-6">
+                <div className="flex items-center mb-4">
+                  <h2 className="text-2xl font-bold text-blue-400">PremierPulse: Premier League Management and Reporting</h2>
+                  <div className="relative ml-2 group">
+                    <Info size={20} className="text-gray-400 hover:text-gray-300 cursor-help" />
+                    <div className="absolute hidden group-hover:block bg-gray-700 text-sm text-gray-200 px-3 py-2 rounded-md -right-4 transform translate-x-full w-64 z-10">
+                      Final assignment of Web Development MSc module, A+
+                    </div>
+                  </div>
+                </div>
+                <p className="mb-4">
+                  A comprehensive web application for Premier League information management and statistics reporting, developed as a final project for an Internet Programming module.
+                </p>
+                <p className="mb-4">
+                  The system features responsive design with league management interfaces, top scorers tracking, and form handling capabilities for data collection and reporting in a clean, user-friendly layout.
+                </p>
+                <div className="mb-4">
+                  <h3 className="text-lg font-semibold mb-2">Technologies and libraries:</h3>
+                  <ul className="list-disc pl-5 space-y-1">
+                    <li>HTML5: Structure and content</li>
+                    <li>CSS3: Responsive styling</li>
+                    <li>JavaScript: Interactive elements</li>
+                    <li>JSON: Data storage and validation</li>
+                    <li>PHP: Backend functionality</li>
+                  </ul>
+                </div>
+                <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-2 sm:space-y-0">
+                  <a 
+                    href="https://github.com/danielhafezi/PremierPulse" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-blue-400 hover:text-blue-300"
+                  >
+                    Available on GitHub
+                    <ExternalLink size={16} className="ml-1" />
+                  </a>
+                </div>
+              </div>
+              <img 
+                src="https://github.com/danielhafezi/PremierPulse/raw/Main/project_overview.png" 
+                alt="Premier Pulse Screenshot" 
+                className="w-full h-auto object-cover border-t border-gray-700"
+              />
+            </div>
+
+            {/* Project 7 - JobMatchCV */}
             <div className="bg-gray-800 rounded-lg overflow-hidden">
               <div className="p-6">
                 <h2 className="text-2xl font-bold text-blue-400 mb-4">JobMatchCV: AI-Powered Resume Optimizer</h2>
