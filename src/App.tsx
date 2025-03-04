@@ -474,7 +474,7 @@ function App() {
               <img 
                 src="./ProfilePicture.png" 
                 alt="Daniel Hafezian" 
-                className="w-full h-64 object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                className="w-full h-80 object-cover object-top cursor-pointer hover:opacity-90 transition-opacity"
                 onClick={() => openImageModal("./ProfilePicture.png", "Daniel Hafezian")}
               />
               <div className="p-6">
