@@ -111,8 +111,45 @@ function App() {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Left Column - Projects */}
           <div className="lg:w-2/3 space-y-12">
-            {/* Project 1 */}
+            {/* JustBYOK Project */}
             <div id="projects" className="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden">
+              <div className="p-6">
+                <h2 className="text-2xl font-bold text-blue-400 mb-4">JustBYOK: Bring Your Own Key AI Chat Platform</h2>
+                <p className="mb-4">
+                  A privacy-focused LLM chat interface where you control your data. All conversations and API keys remain stored locally on your device.
+                </p>
+                <p className="mb-4">
+                  JustBYOK supports multiple LLM providers including OpenAI, Anthropic, and Google with full parameter control, conversation organization, and a clean, intuitive interface.
+                </p>
+                <div className="mb-4">
+                  <h3 className="text-lg font-semibold mb-2">Technologies and libraries:</h3>
+                  <ul className="list-disc pl-5 space-y-1">
+                    <li>Next.js & React: Frontend framework</li>
+                    <li>TypeScript: Type-safe code</li>
+                    <li>Tailwind CSS: Responsive styling</li>
+                    <li>IndexedDB & LocalStorage: Client-side data persistence</li>
+                  </ul>
+                </div>
+                <a 
+                  href="https://justbyok.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-blue-400 hover:text-blue-300"
+                >
+                  Available there
+                  <ExternalLink size={16} className="ml-1" />
+                </a>
+              </div>
+              <img 
+                src="./hero.png" 
+                alt="JustBYOK AI Chat Platform" 
+                className="w-full h-auto object-cover border-t border-gray-700 cursor-pointer hover:opacity-90 transition-opacity"
+                onClick={() => openImageModal("./hero.png", "JustBYOK AI Chat Platform")}
+              />
+            </div>
+
+            {/* Project 1 */}
+            <div className="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden">
               <div className="p-6">
                 <h2 className="text-2xl font-bold text-blue-400 mb-4">EssayEvaluator: Automated Essay Scoring</h2>
                 <p className="mb-4">
@@ -435,10 +472,10 @@ function App() {
           <div id="about" className="lg:w-1/3">
             <div className="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden sticky top-6">
               <img 
-                src="./ProfilePicture.jpg" 
+                src="./ProfilePicture.png" 
                 alt="Daniel Hafezian" 
                 className="w-full h-64 object-cover cursor-pointer hover:opacity-90 transition-opacity"
-                onClick={() => openImageModal("./ProfilePicture.jpg", "Daniel Hafezian")}
+                onClick={() => openImageModal("./ProfilePicture.png", "Daniel Hafezian")}
               />
               <div className="p-6">
                 <h2 className="text-2xl font-bold mb-4">About Me</h2>
