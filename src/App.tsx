@@ -136,7 +136,7 @@ function App() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-blue-400 hover:text-blue-300"
                 >
-                  Available there
+                  JustBYOK Website
                   <ExternalLink size={16} className="ml-1" />
                 </a>
               </div>
