@@ -111,6 +111,39 @@ function App() {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Left Column - Projects */}
           <div className="lg:w-2/3 space-y-12">
+            {/* EHR Explorer Project */}
+            <div className="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden">
+              <div className="p-6">
+                <h2 className="text-2xl font-bold text-blue-400 mb-4">EHR Explorer: Patient Medication Analysis Tool</h2>
+                <p className="mb-4">
+                  Processes longitudinal Electronic Health Record (EHR) data from synthetic patients to deliver AI-powered insights into medication patterns and health trends.
+                </p>
+                <div className="mb-4">
+                  <h3 className="text-lg font-semibold mb-2">Technologies and libraries:</h3>
+                  <ul className="list-disc pl-5 space-y-1">
+                    <li>Next.js 15 & React 18: Frontend framework</li>
+                    <li>Tailwind CSS: Styling</li>
+                    <li>Next.js API routes & SQLite database: Backend</li>
+                    <li>Google Gemini 2.0 Flash: AI Integration</li>
+                  </ul>
+                </div>
+                <a 
+                  href="https://github.com/danielhafezi/EHR-Explorer" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-blue-400 hover:text-blue-300"
+                >
+                  Available on GitHub
+                  <ExternalLink size={16} className="ml-1" />
+                </a>
+              </div>
+              <img 
+                src="./ehroverview.gif" 
+                alt="EHR Explorer Demo" 
+                className="w-full h-auto object-cover border-t border-gray-700 cursor-pointer hover:opacity-90 transition-opacity"
+                onClick={() => openImageModal("./ehroverview.gif", "EHR Explorer Demo")}
+              />
+            </div>
             {/* JustBYOK Project */}
             <div id="projects" className="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden">
               <div className="p-6">
