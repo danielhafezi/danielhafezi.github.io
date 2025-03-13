@@ -111,6 +111,43 @@ function App() {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Left Column - Projects */}
           <div className="lg:w-2/3 space-y-12">
+            {/* PerspectiView Project */}
+            <div className="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden">
+              <div className="p-6">
+                <h2 className="text-2xl font-bold text-blue-400 mb-4">PerspectiView: Transform Narratives Into Perspectives</h2>
+                <p className="mb-4">
+                  A web application that transforms third-person narratives into multiple first-person perspectives, helping users understand how different characters experience the same events in stories.
+                </p>
+                <p className="mb-4">
+                  Using Google's Gemini 2.0 Flash model for analysis, the application automatically identifies characters, generates perspective-based retellings, and creates visual timelines showing emotional and perceptual variations across characters.
+                </p>
+                <div className="mb-4">
+                  <h3 className="text-lg font-semibold mb-2">Technologies and libraries:</h3>
+                  <ul className="list-disc pl-5 space-y-1">
+                    <li>Next.js & React: Frontend framework</li>
+                    <li>TypeScript: Type safety</li>
+                    <li>Tailwind CSS: Styling</li>
+                    <li>Chart.js: Timeline visualization</li>
+                    <li>Google Gemini 2.0 Flash API: AI-powered analysis</li>
+                  </ul>
+                </div>
+                <a 
+                  href="https://github.com/danielhafezi/perspectiview" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-blue-400 hover:text-blue-300"
+                >
+                  Available on GitHub
+                  <ExternalLink size={16} className="ml-1" />
+                </a>
+              </div>
+              <img 
+                src="./project_overview.gif" 
+                alt="PerspectiView Demonstration" 
+                className="w-full h-auto object-cover border-t border-gray-700 cursor-pointer hover:opacity-90 transition-opacity"
+                onClick={() => openImageModal("./project_overview.gif", "PerspectiView Demonstration")}
+              />
+            </div>
             {/* EHR Explorer Project */}
             <div className="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden">
               <div className="p-6">
