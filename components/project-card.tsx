@@ -64,7 +64,7 @@ export function ProjectCard({
 
   return (
     <>
-      <Card className="overflow-hidden border-border h-full flex flex-col">
+      <Card className="overflow-hidden border-border h-full flex flex-col transition-all duration-200 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)]">
         {/* Image now at the top */}
         <div className="relative">
           <img 

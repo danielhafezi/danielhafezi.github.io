@@ -102,6 +102,7 @@ export default function Home() {
                 technologies={[
                   { name: "Next.js" },
                   { name: "React" },
+                  { name: "AI SDK" },
                   { name: "TypeScript" },
                   { name: "Tailwind CSS" },
                   { name: "IndexedDB" },
@@ -161,7 +162,7 @@ export default function Home() {
                   { text: "GitHub", url: "https://github.com/danielhafezi/BetaAnalysisTool" }
                 ]}
                 image={{
-                  src: "https://raw.githubusercontent.com/DanielHafezi/BetaAnalysisTool/main/market_analysis.png",
+                  src: "https://raw.githubusercontent.com/DanielHafezi/BetaAnalysisTool/main/ticker_analysis.png",
                   alt: "Market Analysis Dashboard"
                 }}
               />
@@ -290,7 +291,7 @@ export default function Home() {
           <div className="col-span-1">
             <div id="about" className="sticky top-24">
               <h2 className="text-2xl font-bold border-b pb-2 mb-6 scroll-m-20 lg:block hidden">About Me</h2>
-              <Card className="overflow-hidden">
+              <Card className="overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] transition-all duration-200">
                 <div className="relative">
                   <img 
                     src="/ProfilePicture.png" 
@@ -309,33 +310,55 @@ export default function Home() {
                     <h3 className="font-semibold mb-2">Toolset</h3>
                     <div className="space-y-3">
                       <div className="flex flex-wrap items-center gap-1.5">
-                        <span className="text-sm font-medium mr-1">Frontend:</span>
-                        <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">React</span>
-                        <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">Next.js</span>
-                        <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">TypeScript</span>
-                        <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">Tailwind CSS</span>
+                        <div className="w-16 flex-shrink-0">
+                          <span className="text-sm font-medium">Frontend:</span>
+                        </div>
+                        <div className="flex flex-wrap gap-1.5">
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">React</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">Next.js</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">Shadcn UI</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">TypeScript</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">Framer Motion</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">Tailwind CSS</span>
+                        </div>
                       </div>
                       
                       <div className="flex flex-wrap items-center gap-1.5">
-                        <span className="text-sm font-medium mr-1">Backend:</span>
-                        <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">Node.js</span>
-                        <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">RESTful APIs</span>
-                        <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">SQL</span>
+                        <div className="w-16 flex-shrink-0">
+                          <span className="text-sm font-medium">Backend:</span>
+                        </div>
+                        <div className="flex flex-wrap gap-1.5">
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">Node.js</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">FastAPI</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">RESTful APIs</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">PostgreSQL</span>
+                        </div>
                       </div>
                       
                       <div className="flex flex-wrap items-center gap-1.5">
-                        <span className="text-sm font-medium mr-1">AI & ML:</span>
-                        <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">Python</span>
-                        <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">LLM APIs</span>
-                        <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">LangChain</span>
-                        <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">TensorFlow</span>
+                        <div className="w-16 flex-shrink-0">
+                          <span className="text-sm font-medium">AI & ML:</span>
+                        </div>
+                        <div className="flex flex-wrap gap-1.5">
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">Python</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">LLM APIs</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">Chatbots</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">Fine-tuning</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">RAG</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">LangChain</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">TensorFlow</span>
+                        </div>
                       </div>
                       
                       <div className="flex flex-wrap items-center gap-1.5">
-                        <span className="text-sm font-medium mr-1">Cloud:</span>
-                        <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">Azure</span>
-                        <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">Docker</span>
-                        <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">GitHub Actions</span>
+                        <div className="w-16 flex-shrink-0">
+                          <span className="text-sm font-medium">Cloud:</span>
+                        </div>
+                        <div className="flex flex-wrap gap-1.5">
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">Azure</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">Docker</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">GitHub Actions</span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -393,20 +416,6 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center md:h-16">
             <p className="text-sm text-muted-foreground">© {currentYear} Daniel Hafezian. All rights reserved.</p>
-            <div className="flex gap-4 mt-4 md:mt-0">
-              <Link href="https://github.com/DanielHafezi" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                <Github size={18} />
-                <span className="sr-only">GitHub</span>
-              </Link>
-              <Link href="https://www.linkedin.com/in/danielhafezi" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                <Linkedin size={18} />
-                <span className="sr-only">LinkedIn</span>
-              </Link>
-              <Link href="mailto:danielhafezian@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
-                <Mail size={18} />
-                <span className="sr-only">Email</span>
-              </Link>
-            </div>
           </div>
         </div>
       </footer>
