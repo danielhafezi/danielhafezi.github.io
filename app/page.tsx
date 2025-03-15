@@ -81,7 +81,7 @@ export default function Home() {
                   { name: "React" },
                   { name: "Tailwind CSS" },
                   { name: "SQLite" },
-                  { name: "Google Gemini" }
+                  { name: "Google Gemini API" }
                 ]}
                 links={[
                   { text: "GitHub", url: "https://github.com/danielhafezi/EHR-Explorer" }

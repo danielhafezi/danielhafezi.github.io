@@ -52,7 +52,13 @@ export function ProjectCard({
     const lowerText = text.toLowerCase()
     if (lowerText === "github") return <Github size={14} className="mr-1" />
     if (lowerText === "website") return <Globe size={14} className="mr-1" />
-    if (lowerText === "hugging face") return <Globe size={14} className="mr-1" />
+    if (lowerText === "hugging face") {
+      return (
+        <span className="mr-1 flex items-center justify-center w-3.5 h-3.5">
+          <span className="text-xs leading-none dark:text-white text-black">🤗</span>
+        </span>
+      )
+    }
     return <ExternalLink size={14} className="mr-1" />
   }
 

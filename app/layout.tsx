@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Daniel Hafezian | Full Stack Developer",
+  title: "Daniel Hafezian",
   description: "Portfolio of Daniel Hafezian, Full Stack Developer specializing in React, Next.js, and AI applications",
   icons: {
     icon: '/sparkle.svg',
@@ -24,7 +24,7 @@ export default function RootLayout({
       <body className={cn(inter.className, "min-h-screen antialiased")}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
