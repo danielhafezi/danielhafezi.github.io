@@ -45,6 +45,29 @@ export default function Home() {
             <h2 id="projects" className="text-2xl font-bold border-b pb-2 scroll-m-20">Projects</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Interactive Policy Explorer Project */}
+              <ProjectCard 
+                title="Interactive Policy Explorer: Economic Policy Simulation"
+                description={[
+                  "A Next.js application that demonstrates the capabilities of Large Language Models (specifically Google's Gemini Flash 2) in economic policy simulation.",
+                  "This tool allows users to explore how various economic and technological transition policies might impact different socio-economic groups through an intuitive visual interface with customizable policy configurations, socio-economic group selection, and interactive visualizations."
+                ]}
+                technologies={[
+                  { name: "Next.js" },
+                  { name: "TypeScript" },
+                  { name: "Tailwind CSS" },
+                  { name: "Google Gemini API" },
+                  { name: "D3.js" }
+                ]}
+                links={[
+                  { text: "GitHub", url: "https://github.com/danielhafezi/InteractivePolicyExplorer" }
+                ]}
+                image={{
+                  src: "/InteractivePolicyExplorer.gif",
+                  alt: "Interactive Policy Explorer Demo"
+                }}
+              />
+              
               {/* PerspectiView Project */}
               <ProjectCard 
                 title="PerspectiView: Transform Narratives Into Perspectives"
@@ -189,9 +212,6 @@ export default function Home() {
                   alt: "GradPathAI Landing Page"
                 }}
               />
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6">
               {/* StaffWorkloadManager Project */}
               <ProjectCard 
                 title="StaffWorkloadManager: Academic Workload Management"
