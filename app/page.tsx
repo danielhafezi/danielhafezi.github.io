@@ -18,9 +18,9 @@ import { projects, uniqueCategories } from "@/lib/projectsData"; // Import proje
 
 export default function Home() {
   const currentYear = new Date().getFullYear();
-  const [selectedCategory, setSelectedCategory] = useState("All Projects");
+  const [selectedCategory, setSelectedCategory] = useState("All"); // Changed default state
 
-  const filteredProjects = selectedCategory === "All Projects" 
+  const filteredProjects = selectedCategory === "All" // Changed condition
     ? projects 
     : projects.filter(project => project.categories.includes(selectedCategory));
 

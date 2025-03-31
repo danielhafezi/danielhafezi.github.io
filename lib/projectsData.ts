@@ -265,4 +265,4 @@ export const projects: Project[] = [
 ];
 
 // Extract unique categories for the filter dropdown
-export const uniqueCategories = ["All Projects", ...Array.from(new Set(projects.flatMap(p => p.categories)))];
+export const uniqueCategories = ["All", ...Array.from(new Set(projects.flatMap(p => p.categories)))];
