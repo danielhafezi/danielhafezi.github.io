@@ -1,13 +1,29 @@
-import { MainNav } from "@/components/main-nav"
-import { ProjectCard } from "@/components/project-card"
-import { Badge } from "@/components/ui/badge"
-import { Card } from "@/components/ui/card"
-import { Github, Linkedin, Mail, Phone, Briefcase } from "lucide-react"
-import Link from "next/link"
+"use client"; // Required for useState
+
+import { useState } from "react";
+import { MainNav } from "@/components/main-nav";
+import { ProjectCard } from "@/components/project-card";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Github, Linkedin, Mail, Phone, Briefcase, Filter } from "lucide-react";
+import Link from "next/link";
+import { projects, uniqueCategories } from "@/lib/projectsData"; // Import project data
 
 export default function Home() {
-  const currentYear = new Date().getFullYear()
-  
+  const currentYear = new Date().getFullYear();
+  const [selectedCategory, setSelectedCategory] = useState("All Projects");
+
+  const filteredProjects = selectedCategory === "All Projects" 
+    ? projects 
+    : projects.filter(project => project.categories.includes(selectedCategory));
+
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header/Navigation */}
@@ -42,268 +58,41 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left Column - Projects */}
           <div className="col-span-1 lg:col-span-2 space-y-6">
-            <h2 id="projects" className="text-2xl font-bold border-b pb-2 scroll-m-20">Projects</h2>
+            <div className="flex justify-between items-center border-b pb-2">
+              <h2 id="projects" className="text-2xl font-bold scroll-m-20">Projects</h2>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" size="sm">
+                    <Filter className="mr-2 h-4 w-4" />
+                    {selectedCategory}
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuRadioGroup value={selectedCategory} onValueChange={setSelectedCategory}>
+                    {uniqueCategories.map((category) => (
+                      <DropdownMenuRadioItem key={category} value={category}>
+                        {category}
+                      </DropdownMenuRadioItem>
+                    ))}
+                  </DropdownMenuRadioGroup>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Interactive Policy Explorer Project */}
-              <ProjectCard 
-                title="Interactive Policy Explorer: Economic Policy Simulation"
-                description={[
-                  "A Next.js application that demonstrates the capabilities of Large Language Models (specifically Google's Gemini Flash 2) in economic policy simulation.",
-                  "This tool allows users to explore how various economic and technological transition policies might impact different socio-economic groups through an intuitive visual interface with customizable policy configurations, socio-economic group selection, and interactive visualizations."
-                ]}
-                technologies={[
-                  { name: "Next.js" },
-                  { name: "TypeScript" },
-                  { name: "Tailwind CSS" },
-                  { name: "Google Gemini API" },
-                  { name: "D3.js" }
-                ]}
-                links={[
-                  { text: "GitHub", url: "https://github.com/danielhafezi/InteractivePolicyExplorer" }
-                ]}
-                image={{
-                  src: "/InteractivePolicyExplorer.gif",
-                  alt: "Interactive Policy Explorer Demo"
-                }}
-              />
-              
-              {/* PerspectiView Project */}
-              <ProjectCard 
-                title="PerspectiView: Transform Narratives Into Perspectives"
-                description={[
-                  "A web application that transforms third-person narratives into multiple first-person perspectives, helping users understand how different characters experience the same events in stories.",
-                  "Using Google's Gemini 2.0 Flash model for analysis, the application automatically identifies characters, generates perspective-based retellings, and creates visual timelines showing emotional and perceptual variations across characters."
-                ]}
-                technologies={[
-                  { name: "Next.js" },
-                  { name: "React" },
-                  { name: "TypeScript" },
-                  { name: "Tailwind CSS" },
-                  { name: "Chart.js" },
-                  { name: "Google Gemini API" }
-                ]}
-                links={[
-                  { text: "GitHub", url: "https://github.com/danielhafezi/perspectiview" }
-                ]}
-                image={{
-                  src: "/PerspectiView.gif",
-                  alt: "PerspectiView Demonstration"
-                }}
-              />
-
-              {/* EHR Explorer Project */}
-              <ProjectCard 
-                title="EHR Explorer: Patient Medication Analysis Tool"
-                description={[
-                  "Processes longitudinal Electronic Health Record (EHR) data from synthetic patients to deliver AI-powered insights into medication patterns and health trends.",
-                  "The tool enables healthcare professionals to track medication effectiveness, identify potential interactions, and visualize patient health trajectories over time. Users can explore comprehensive cross-analyses of conditions and medications through an intuitive interface designed to surface meaningful patterns in complex healthcare data."
-                ]}
-                technologies={[
-                  { name: "Next.js" },
-                  { name: "React" },
-                  { name: "Tailwind CSS" },
-                  { name: "SQLite" },
-                  { name: "Google Gemini API" }
-                ]}
-                links={[
-                  { text: "GitHub", url: "https://github.com/danielhafezi/EHR-Explorer" }
-                ]}
-                image={{
-                  src: "/EHR.gif",
-                  alt: "EHR Explorer Demo"
-                }}
-              />
-
-              {/* JustBYOK Project */}
-              <ProjectCard 
-                title="JustBYOK: Bring Your Own Key AI Chat Platform"
-                description={[
-                  "A privacy-focused LLM chat interface where you control your data. All conversations and API keys remain stored locally on your device.",
-                  "JustBYOK supports multiple LLM providers including OpenAI, Anthropic, and Google with full parameter control, conversation organization, and a clean, intuitive interface."
-                ]}
-                technologies={[
-                  { name: "Next.js" },
-                  { name: "React" },
-                  { name: "AI SDK" },
-                  { name: "TypeScript" },
-                  { name: "Tailwind CSS" },
-                  { name: "IndexedDB" },
-                  { name: "LocalStorage" }
-                ]}
-                links={[
-                  { text: "Website", url: "https://justbyok.com" }
-                ]}
-                image={{
-                  src: "/JustBYOK.png",
-                  alt: "JustBYOK AI Chat Platform"
-                }}
-              />
-
-              {/* EssayEvaluator Project */}
-              <ProjectCard 
-                title="EssayEvaluator: Automated Essay Scoring"
-                description={[
-                  "State-of-the-Art Automated Essay Scoring system using a 3.8B parameter language model that outperforms larger commercial models.",
-                  "This AI model provides accurate scoring for academic essays, matching industry standards with a QWK of 0.82. The system reduces error rates by nearly 65% compared to baseline models while offering a 99.99% cost reduction compared to commercial alternatives."
-                ]}
-                technologies={[
-                  { name: "PyTorch" },
-                  { name: "Hugging Face" },
-                  { name: "NLTK" },
-                  { name: "spaCy" },
-                  { name: "NumPy" },
-                  { name: "Pandas" }
-                ]}
-                links={[
-                  { text: "Hugging Face", url: "https://huggingface.co/DanielHafezi/essayevaluator" },
-                  { text: "GitHub", url: "https://github.com/danielhafezi/EssayEvaluator" }
-                ]}
-                image={{
-                  src: "/EssayEvaluator.png",
-                  alt: "Essay Evaluator Overview"
-                }}
-              />
-
-              {/* BetaAnalysisTool Project */}
-              <ProjectCard 
-                title="BetaAnalysisTool: Crypto Market Analytics"
-                description={[
-                  "A multi-stack application designed to analyze crypto market data and calculate beta values for digital assets.",
-                  "The tool provides interactive dashboards for crypto market analysis with beta pattern tracking, helping traders identify risk profiles across various digital assets."
-                ]}
-                technologies={[
-                  { name: "Python" },
-                  { name: "React" },
-                  { name: "Pandas" },
-                  { name: "NumPy" },
-                  { name: "Streamlit" },
-                  { name: "Plotly" },
-                  { name: "CCXT" }
-                ]}
-                links={[
-                  { text: "GitHub", url: "https://github.com/danielhafezi/BetaAnalysisTool" }
-                ]}
-                image={{
-                  src: "https://raw.githubusercontent.com/DanielHafezi/BetaAnalysisTool/main/ticker_analysis.png",
-                  alt: "Market Analysis Dashboard"
-                }}
-              />
-
-              {/* GradPathAI Project */}
-              <ProjectCard 
-                title="GradPathAI: University Application Assistant"
-                description={[
-                  "AI-powered tools to assist students with university applications, built and launched as the founder.",
-                  "GradPathAI delivers personalized recommendations through multi-agent AI systems, helping students navigate the complex university application process with confidence."
-                ]}
-                technologies={[
-                  { name: "Next.js" },
-                  { name: "TypeScript" },
-                  { name: "LangChain JS" },
-                  { name: "LangGraph JS" },
-                  { name: "Azure" }
-                ]}
-                links={[
-                  { text: "Website", url: "https://gradpathai.com" }
-                ]}
-                image={{
-                  src: "/GradPathAI.png",
-                  alt: "GradPathAI Landing Page"
-                }}
-              />
-              {/* StaffWorkloadManager Project */}
-              <ProjectCard 
-                title="StaffWorkloadManager: Academic Workload Management"
-                description={[
-                  "A JavaFX application for managing and calculating staff workloads in academic settings, ensuring compliance with contractual obligations and custom-defined activity rules."
-                ]}
-                technologies={[
-                  { name: "Java" },
-                  { name: "JavaFX" },
-                  { name: "Serialization" },
-                  { name: "JUnit" }
-                ]}
-                links={[
-                  { text: "GitHub", url: "https://github.com/danielhafezi/StaffWorkloadManager" }
-                ]}
-                image={{
-                  src: "https://raw.githubusercontent.com/DanielHafezi/StaffWorkloadManager/main/project_overview.png",
-                  alt: "Staff Workload Manager Screenshot"
-                }}
-                infoTooltip="Final assignment of Visual Object Software MSc module, A+"
-              />
-
-              {/* ScholarshipScout Project */}
-              <ProjectCard 
-                title="ScholarshipScout: Multi-Agent AI Web Scraper"
-                description={[
-                  "Multi-Agent AI based web scraper designed to search for fully funded doctorate positions from popular academic position websites.",
-                  "Helps users find PhD opportunities by scraping data from websites like ScholarshipDB and FindAPhD, filtering positions based on desired countries and saving results in multiple formats."
-                ]}
-                technologies={[
-                  { name: "Python" },
-                  { name: "AutoGen" },
-                  { name: "BeautifulSoup" },
-                  { name: "HTTPX" },
-                  { name: "Pandas" },
-                  { name: "Asyncio" }
-                ]}
-                links={[
-                  { text: "GitHub", url: "https://github.com/DanielHafezi/ScholarshipScout" }
-                ]}
-                image={{
-                  src: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-                  alt: "ScholarshipScout Web Scraper"
-                }}
-              />
-
-              {/* PremierPulse Project */}
-              <ProjectCard 
-                title="PremierPulse: Premier League Management and Reporting"
-                description={[
-                  "A comprehensive web application for Premier League information management and statistics reporting, developed as a final project for an Internet Programming module."
-                ]}
-                technologies={[
-                  { name: "HTML5" },
-                  { name: "CSS3" },
-                  { name: "JavaScript" },
-                  { name: "JSON" },
-                  { name: "PHP" }
-                ]}
-                links={[
-                  { text: "GitHub", url: "https://github.com/danielhafezi/PremierPulse" }
-                ]}
-                image={{
-                  src: "https://raw.githubusercontent.com/DanielHafezi/PremierPulse/master/project_overview.png",
-                  alt: "Premier Pulse Screenshot"
-                }}
-                infoTooltip="Final assignment of Web Development MSc module, A+"
-              />
-
-              {/* JobMatchCV Project */}
-              <ProjectCard 
-                title="JobMatchCV: AI-Powered Resume Optimizer"
-                description={[
-                  "An innovative multi-agent system that leverages the AutoGen framework to enhance CVs based on specific job advertisements.",
-                  "This system analyzes both the CV and job requirements, generates tailored enhancement suggestions, and converts the improved CV to a professional markdown format."
-                ]}
-                technologies={[
-                  { name: "Python" },
-                  { name: "AutoGen" },
-                  { name: "PyPDF2" },
-                  { name: "python-docx" },
-                  { name: "BeautifulSoup" },
-                  { name: "Markdown" }
-                ]}
-                links={[
-                  { text: "GitHub", url: "https://github.com/DanielHafezi/JobMatchCV" }
-                ]}
-                image={{
-                  src: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-                  alt: "JobMatchCV Resume Optimizer"
-                }}
-              />
+              {filteredProjects.map((project) => (
+                <ProjectCard 
+                  key={project.title} // Add key for list rendering
+                  title={project.title}
+                  description={project.description}
+                  technologies={project.technologies}
+                  links={project.links}
+                  image={project.image}
+                  infoTooltip={project.infoTooltip}
+                  // Optionally pass categories to display on card
+                  // categories={project.categories} 
+                />
+              ))}
             </div>
           </div>
 
