@@ -130,11 +130,9 @@ export default function Home() {
                   
                   <div>
                     <h3 className="font-semibold mb-2">Toolset</h3>
-                    <div className="space-y-3">
-                      <div className="flex flex-wrap items-center gap-1.5">
-                        <div className="w-16 flex-shrink-0">
-                          <span className="text-sm font-medium">Frontend:</span>
-                        </div>
+                    <div className="space-y-2">
+                      <div>
+                        <div className="text-sm font-medium mb-1.5">Frontend:</div>
                         <div className="flex flex-wrap gap-1.5">
                           <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">React</span>
                           <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">Next.js</span>
@@ -145,10 +143,8 @@ export default function Home() {
                         </div>
                       </div>
                       
-                      <div className="flex flex-wrap items-center gap-1.5">
-                        <div className="w-16 flex-shrink-0">
-                          <span className="text-sm font-medium">Backend:</span>
-                        </div>
+                      <div>
+                        <div className="text-sm font-medium mb-1.5">Backend:</div>
                         <div className="flex flex-wrap gap-1.5">
                           <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">Node.js</span>
                           <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">FastAPI</span>
@@ -157,10 +153,8 @@ export default function Home() {
                         </div>
                       </div>
                       
-                      <div className="flex flex-wrap items-center gap-1.5">
-                        <div className="w-16 flex-shrink-0">
-                          <span className="text-sm font-medium">AI & ML:</span>
-                        </div>
+                      <div>
+                        <div className="text-sm font-medium mb-1.5">AI & ML:</div>
                         <div className="flex flex-wrap gap-1.5">
                           <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">Python</span>
                           <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">LLM APIs</span>
@@ -172,10 +166,8 @@ export default function Home() {
                         </div>
                       </div>
                       
-                      <div className="flex flex-wrap items-center gap-1.5">
-                        <div className="w-16 flex-shrink-0">
-                          <span className="text-sm font-medium">Cloud:</span>
-                        </div>
+                      <div>
+                        <div className="text-sm font-medium mb-1.5">Cloud:</div>
                         <div className="flex flex-wrap gap-1.5">
                           <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">Azure</span>
                           <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">Docker</span>
