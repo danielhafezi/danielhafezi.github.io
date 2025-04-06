@@ -15,6 +15,7 @@ import {
 import { Github, Linkedin, Mail, Phone, Briefcase, Filter } from "lucide-react";
 import Link from "next/link";
 import { projects, uniqueCategories } from "@/lib/projectsData"; // Import project data
+import Typewriter from 'typewriter-effect';
 
 export default function Home() {
   const currentYear = new Date().getFullYear();
@@ -46,9 +47,21 @@ export default function Home() {
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-2 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/80">
               Daniel Hafezian
             </h1>
-            <p className="text-base md:text-xl text-muted-foreground font-light mb-4">
-              Full Stack Developer specializing in modern web applications and AI integration
-            </p>
+            <div className="text-base md:text-xl text-muted-foreground font-light mb-4">
+              <Typewriter
+                options={{
+                  strings: [
+                    'Full Stack Developer',
+                    'Specializing in AI & GenAI-infused applications',
+                    'Building with modern AI integration techniques'
+                  ],
+                  autoStart: true,
+                  loop: true,
+                  delay: 75,
+                  deleteSpeed: 50,
+                }}
+              />
+            </div>
           </div>
         </div>
       </section>
