@@ -34,3 +34,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 Guidelines.md
+
+# memory bank
+memory-bank/
