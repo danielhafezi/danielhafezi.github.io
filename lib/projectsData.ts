@@ -11,6 +11,29 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  // MedChronos Project
+  { 
+    title: "MedChronos: AI-Powered Medical Imaging Timeline",
+    description: [
+      "The first open-source, AI-driven platform for managing and analyzing patient medical imaging studies over time.",
+      "Revolutionizes how clinicians and researchers interact with patient imaging data by providing chronological timelines and leveraging cutting-edge AI for unprecedented insights into patient health trajectories. Features automated slice captioning, per-study summaries, holistic patient reports, and AI-powered patient chat capabilities."
+    ],
+    technologies: [
+      { name: "Next.js 15" }, { name: "React 19" }, { name: "TypeScript" }, { name: "Tailwind CSS" }, 
+      { name: "Prisma ORM" }, { name: "PostgreSQL" }, { name: "Google Generative AI" }, 
+      { name: "Google Cloud Storage" }, { name: "Sharp" }, { name: "Puppeteer" }
+    ],
+    links: [
+      { text: "Website", url: "https://medchronos.com" },
+      { text: "GitHub", url: "https://github.com/danielhafezi/MedChronos" }
+    ],
+    image: {
+      src: "/medchronos.gif",
+      alt: "MedChronos AI-Powered Medical Imaging Timeline Demo"
+    },
+    categories: ["AI & Machine Learning", "Health Tech", "Web Applications & Platforms"]
+  },
+
   // IMID Patient Clusters Visualization Dashboard Project
   { 
     title: "IMID Patient Clusters Visualization Dashboard",
