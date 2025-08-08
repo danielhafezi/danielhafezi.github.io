@@ -1,12 +1,13 @@
 "use client"
 
 import { useState } from "react"
-import { ExternalLink, Github, Globe } from "lucide-react"
+import { ExternalLink, Github, Globe, Star } from "lucide-react"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { ImageModal } from "@/components/image-modal"
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 
 interface Technology {
   name: string
@@ -27,6 +28,7 @@ interface ProjectCardProps {
     alt: string
   }
   infoTooltip?: string
+  featured?: boolean
 }
 
 export function ProjectCard({ 
@@ -35,7 +37,8 @@ export function ProjectCard({
   technologies, 
   links, 
   image,
-  infoTooltip 
+  infoTooltip,
+  featured = false
 }: ProjectCardProps) {
   const [modalImage, setModalImage] = useState({ isOpen: false, src: "", alt: "" })
 
@@ -64,7 +67,25 @@ export function ProjectCard({
 
   return (
     <>
-      <Card className="overflow-hidden border-border h-full flex flex-col transition-all duration-200 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)]">
+      <Card
+        className={cn(
+          "relative overflow-hidden h-full flex flex-col transition-all duration-200 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)]",
+          featured
+            ? "border-[rgba(245,158,11,0.28)] shadow-[0_0_0_1px_rgba(245,158,11,0.18),0_10px_20px_rgba(245,158,11,0.10)]"
+            : "border-border"
+        )}
+      >
+        {featured && (
+          <div
+            className="absolute top-2 left-2 z-10 inline-flex items-center gap-1 rounded-sm border px-2 py-0.5 text-[10px] font-medium 
+            border-amber-600 bg-amber-500 text-white 
+            dark:border-amber-300 dark:bg-amber-400 dark:text-black"
+            aria-label="Featured project"
+          >
+            <Star size={12} />
+            Featured
+          </div>
+        )}
         {/* Image now at the top */}
         <div className="relative">
           <img 

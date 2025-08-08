@@ -21,9 +21,12 @@ export default function Home() {
   const currentYear = new Date().getFullYear();
   const [selectedCategory, setSelectedCategory] = useState("All"); // Changed default state
 
-  const filteredProjects = selectedCategory === "All" // Changed condition
-    ? projects 
+  const filteredProjects = selectedCategory === "All"
+    ? projects
     : projects.filter(project => project.categories.includes(selectedCategory));
+
+  // Ensure featured projects are shown first while preserving grid/columns
+  const sortedProjects = [...filteredProjects].sort((a, b) => Number(!!b.featured) - Number(!!a.featured));
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -93,7 +96,7 @@ export default function Home() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {filteredProjects.map((project) => (
+              {sortedProjects.map((project) => (
                 <ProjectCard 
                   key={project.title} // Add key for list rendering
                   title={project.title}
@@ -102,6 +105,7 @@ export default function Home() {
                   links={project.links}
                   image={project.image}
                   infoTooltip={project.infoTooltip}
+                  featured={project.featured}
                   // Optionally pass categories to display on card
                   // categories={project.categories} 
                 />

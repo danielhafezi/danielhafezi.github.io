@@ -8,6 +8,7 @@ export interface Project {
   image: { src: string; alt: string };
   infoTooltip?: string;
   categories: string[]; // Added categories field
+  featured?: boolean; // Marks projects to be highlighted and surfaced first
 }
 
 export const projects: Project[] = [
@@ -31,7 +32,8 @@ export const projects: Project[] = [
       src: "/medchronos.gif",
       alt: "MedChronos AI-Powered Medical Imaging Timeline Demo"
     },
-    categories: ["AI & Machine Learning", "Health Tech", "Web Applications & Platforms"]
+    categories: ["AI & Machine Learning", "Health Tech", "Web Applications & Platforms"],
+    featured: true
   },
 
   // IMID Patient Clusters Visualization Dashboard Project
@@ -137,7 +139,8 @@ export const projects: Project[] = [
       src: "/JustBYOK.png",
       alt: "JustBYOK AI Chat Platform"
     },
-    categories: ["AI & Machine Learning", "Web Applications & Platforms"]
+    categories: ["AI & Machine Learning", "Web Applications & Platforms"],
+    featured: true
   },
 
   // EssayEvaluator Project
@@ -159,7 +162,8 @@ export const projects: Project[] = [
       src: "/EssayEvaluator.png",
       alt: "Essay Evaluator Overview"
     },
-    categories: ["AI & Machine Learning", "Education Tech"]
+    categories: ["AI & Machine Learning", "Education Tech"],
+    featured: true
   },
 
   // BetaAnalysisTool Project
