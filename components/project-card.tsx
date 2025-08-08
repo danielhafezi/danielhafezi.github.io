@@ -71,18 +71,17 @@ export function ProjectCard({
         className={cn(
           "relative overflow-hidden h-full flex flex-col transition-all duration-200 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)]",
           featured
-            ? "border-[rgba(245,158,11,0.28)] shadow-[0_0_0_1px_rgba(245,158,11,0.18),0_10px_20px_rgba(245,158,11,0.10)]"
+            ? "border-primary/30 ring-1 ring-primary/10 shadow-[0_10px_20px_rgba(17,24,39,0.06)] dark:shadow-[0_10px_20px_rgba(0,0,0,0.6)]"
             : "border-border"
         )}
       >
         {featured && (
           <div
             className="absolute top-2 left-2 z-10 inline-flex items-center gap-1 rounded-sm border px-2 py-0.5 text-[10px] font-medium 
-            border-amber-600 bg-amber-500 text-white 
-            dark:border-amber-300 dark:bg-amber-400 dark:text-black"
+            border-border bg-secondary text-secondary-foreground"
             aria-label="Featured project"
           >
-            <Star size={12} />
+            <Star size={12} className="text-primary" />
             Featured
           </div>
         )}

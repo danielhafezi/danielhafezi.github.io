@@ -38,16 +38,35 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="relative py-10 md:py-16 overflow-hidden">
-        {/* Decorative background elements */}
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(45%_40%_at_50%_60%,rgba(var(--foreground-rgb),0.1),transparent)]" aria-hidden="true"></div>
-        <div className="absolute -left-4 -top-20 -z-10 transform-gpu blur-3xl" aria-hidden="true">
-          <div className="aspect-[1155/678] w-[72.19rem] bg-gradient-to-tr from-primary/20 to-primary-foreground/20 opacity-30"></div>
+      <section
+        id="home"
+        onMouseMove={(e) => {
+          const target = e.currentTarget as HTMLElement
+          target.style.setProperty('--mx', `${e.clientX}px`)
+          target.style.setProperty('--my', `${e.clientY}px`)
+        }}
+        className="relative py-10 md:py-16 overflow-hidden"
+      >
+        {/* Enhanced background layers */}
+        <div className="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+          {/* Aurora / conic gradient — two-color palette to match profile photo (blue ↔ pink) */}
+          <div className="absolute -inset-40 blur-3xl opacity-60 animate-[spin_25s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,_rgba(59,130,246,0.28),_rgba(236,72,153,0.28),_rgba(59,130,246,0.28))]" />
+          {/* Soft radial vignette */}
+          <div className="absolute inset-0 bg-[radial-gradient(60%_40%_at_50%_60%,rgba(var(--foreground-rgb),0.05),transparent)]" />
+          {/* Subtle grid overlay */}
+          <div className="absolute inset-0 opacity-[.08] bg-[linear-gradient(to_right,rgba(var(--foreground-rgb),0.25)_1px,transparent_1px),linear-gradient(to_bottom,rgba(var(--foreground-rgb),0.25)_1px,transparent_1px)] bg-[size:44px_44px]" />
+          {/* Grain / noise texture */}
+          <div className="absolute inset-0 opacity-[.06] mix-blend-overlay bg-[url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'60\' height=\'60\'><filter id=\'n\'><feTurbulence type=\'fractalNoise\' baseFrequency=\'.8\' numOctaves=\'2\'/></filter><rect width=\'100%\' height=\'100%\' filter=\'url(%23n)\' opacity=\'.35\'/></svg>')]" />
         </div>
+        {/* Cursor spotlight */}
+        <div
+          className="absolute inset-0 -z-10 pointer-events-none mix-blend-soft-light bg-[radial-gradient(240px_240px_at_var(--mx)_var(--my),rgba(255,255,255,0.18),transparent_60%)] dark:bg-[radial-gradient(240px_240px_at_var(--mx)_var(--my),rgba(255,255,255,0.08),transparent_60%)]"
+          aria-hidden="true"
+        />
         
         <div className="container mx-auto px-4">
           <div className="flex flex-col items-start max-w-md">
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-2 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/80">
+            <h1 className="inline-block text-3xl md:text-5xl font-bold tracking-tight mb-2 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/80">
               Daniel Hafezian
             </h1>
             <div className="text-base md:text-xl text-muted-foreground font-light mb-4">
