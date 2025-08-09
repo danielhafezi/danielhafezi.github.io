@@ -103,7 +103,7 @@ export default function Home() {
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left Column - Projects */}
-          <div className="col-span-1 lg:col-span-2 space-y-6 relative lg:mt-16">
+          <div className="col-span-1 lg:col-span-2 space-y-6 relative">
             {/* Projects section background */}
             <div className="absolute inset-0 -z-10 overflow-hidden rounded-2xl" aria-hidden="true">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.02] via-transparent to-pink-500/[0.02]" />
@@ -111,7 +111,7 @@ export default function Home() {
             </div>
             
             <div className="flex justify-between items-center border-b pb-2">
-              <h2 id="projects" className="text-2xl font-bold scroll-m-20 lg:-mt-10">Projects</h2>
+              <h2 id="projects" className="text-2xl font-bold scroll-m-20">Projects</h2>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="outline" size="sm">
@@ -150,7 +150,7 @@ export default function Home() {
           </div>
 
           {/* Right Column - About Me */}  
-          <div className="col-span-1 relative lg:mt-0">
+          <div className="col-span-1 relative">
             {/* About section background */}
             <div className="absolute inset-0 -z-10 overflow-hidden rounded-2xl" aria-hidden="true">
               <div className="absolute inset-0 bg-gradient-to-tl from-pink-500/[0.015] via-transparent to-blue-500/[0.015]" />
@@ -158,7 +158,7 @@ export default function Home() {
             </div>
             
             <div id="about" className="sticky top-24">
-              <h2 className="text-2xl font-bold border-b pb-2 mb-6 scroll-m-20 lg:block hidden lg:-mt-10">About Me</h2>
+              <h2 className="text-2xl font-bold border-b pb-2 mb-6 scroll-m-20 lg:block hidden">About Me</h2>
               <Card className="overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] transition-all duration-200">
                 <div className="relative">
                   <img 
