@@ -92,6 +92,18 @@
     66% { transform: translateY(5px) rotate(-1deg); }
   }
   
+  @keyframes pulse-subtle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+  }
+  
+  @keyframes drift {
+    0%, 100% { transform: translate(0px, 0px); }
+    25% { transform: translate(10px, -5px); }
+    50% { transform: translate(-5px, -10px); }
+    75% { transform: translate(-10px, 5px); }
+  }
+  
   /* Enhance existing animations */
   .animate-gradient {
     background-size: 200% 200%;

@@ -95,19 +95,27 @@ export default function Home() {
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-12 flex-grow relative">
-        {/* Main content subtle background */}
-        <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
-          <div className="absolute top-1/3 -left-40 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl animate-[float_20s_ease-in-out_infinite]" />
-          <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-pink-500/5 rounded-full blur-3xl animate-[float_25s_ease-in-out_infinite_reverse]" />
-        </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left Column - Projects */}
-          <div className="col-span-1 lg:col-span-2 space-y-6 relative">
-            {/* Projects section background */}
-            <div className="absolute inset-0 -z-10 overflow-hidden rounded-2xl" aria-hidden="true">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.02] via-transparent to-pink-500/[0.02]" />
-              <div className="absolute inset-0 opacity-[.02] bg-[radial-gradient(circle_at_30%_40%,rgba(59,130,246,0.3),transparent_50%),radial-gradient(circle_at_70%_60%,rgba(236,72,153,0.3),transparent_50%)]" />
+          <div className="col-span-1 lg:col-span-2 space-y-6 relative overflow-hidden rounded-2xl">
+            {/* Enhanced Projects section background */}
+            <div className="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+              {/* Base gradient layer */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.015] via-transparent to-pink-500/[0.015]" />
+              
+              {/* Animated conic gradient - slower rotation */}
+              <div className="absolute top-10 right-10 w-96 h-96 bg-[conic-gradient(from_180deg_at_50%_50%,rgba(59,130,246,0.08),rgba(236,72,153,0.08),rgba(59,130,246,0.08))] rounded-full blur-3xl opacity-60 animate-[spin_40s_linear_infinite]" />
+              
+              {/* Grid pattern overlay */}
+              <div className="absolute inset-0 opacity-[.02] bg-[linear-gradient(to_right,rgba(var(--foreground-rgb),0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(var(--foreground-rgb),0.15)_1px,transparent_1px)] bg-[size:48px_48px]" />
+              
+              {/* Floating gradient orbs */}
+              <div className="absolute top-20 left-20 w-64 h-64 bg-gradient-radial from-blue-500/5 to-transparent rounded-full animate-[float_25s_ease-in-out_infinite]" />
+              <div className="absolute bottom-40 right-32 w-48 h-48 bg-gradient-radial from-pink-500/4 to-transparent rounded-full animate-[float_30s_ease-in-out_infinite_reverse]" />
+              
+              {/* Subtle horizontal sweep */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500/[0.008] to-transparent animate-[gradient_12s_ease_infinite]" />
             </div>
             
             <div className="flex justify-between items-center border-b pb-2">
@@ -150,11 +158,28 @@ export default function Home() {
           </div>
 
           {/* Right Column - About Me */}
-          <div className="col-span-1 relative">
-            {/* About section background */}
-            <div className="absolute inset-0 -z-10 overflow-hidden rounded-2xl" aria-hidden="true">
-              <div className="absolute inset-0 bg-gradient-to-tl from-pink-500/[0.015] via-transparent to-blue-500/[0.015]" />
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-conic from-blue-500/10 via-pink-500/10 to-blue-500/10 rounded-full blur-2xl animate-[spin_30s_linear_infinite]" />
+          <div className="col-span-1 relative overflow-hidden rounded-2xl">
+            {/* Enhanced About section background */}
+            <div className="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+              {/* Base gradient layer */}
+              <div className="absolute inset-0 bg-gradient-to-tl from-pink-500/[0.01] via-transparent to-blue-500/[0.01]" />
+              
+              {/* Main rotating conic gradient */}
+              <div className="absolute top-0 right-0 w-80 h-80 bg-[conic-gradient(from_0deg_at_50%_50%,rgba(236,72,153,0.06),rgba(59,130,246,0.06),rgba(236,72,153,0.06))] rounded-full blur-3xl opacity-70 animate-[spin_35s_linear_infinite]" />
+              
+              {/* Counter-rotating smaller gradient */}
+              <div className="absolute bottom-20 left-0 w-48 h-48 bg-[conic-gradient(from_90deg_at_50%_50%,rgba(59,130,246,0.04),rgba(236,72,153,0.04),rgba(59,130,246,0.04))] rounded-full blur-2xl opacity-50 animate-[spin_25s_linear_infinite_reverse]" />
+              
+              {/* Fine grid pattern */}
+              <div className="absolute inset-0 opacity-[.015] bg-[linear-gradient(to_right,rgba(var(--foreground-rgb),0.2)_1px,transparent_1px),linear-gradient(to_bottom,rgba(var(--foreground-rgb),0.2)_1px,transparent_1px)] bg-[size:32px_32px]" />
+              
+              {/* Gentle floating particles */}
+              <div className="absolute top-32 left-16 w-2 h-2 bg-blue-500/20 rounded-full animate-[float_20s_ease-in-out_infinite]" />
+              <div className="absolute top-48 right-20 w-1.5 h-1.5 bg-pink-500/15 rounded-full animate-[float_24s_ease-in-out_infinite_reverse]" />
+              <div className="absolute bottom-32 left-8 w-1 h-1 bg-blue-500/10 rounded-full animate-[float_28s_ease-in-out_infinite]" />
+              
+              {/* Vertical gradient sweep */}
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-pink-500/[0.005] to-transparent animate-[gradient_15s_ease_infinite]" />
             </div>
             
             <div id="about" className="sticky top-24">
