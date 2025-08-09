@@ -101,9 +101,9 @@ export default function Home() {
           <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-pink-500/5 rounded-full blur-3xl animate-[float_25s_ease-in-out_infinite_reverse]" />
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left Column - Projects */}
-          <div className="col-span-1 lg:col-span-2 space-y-6 relative lg:-mt-2">
+          <div className="col-span-1 lg:col-span-2 space-y-6 relative lg:-mt-7">
             {/* Projects section background */}
             <div className="absolute inset-0 -z-10 overflow-hidden rounded-2xl" aria-hidden="true">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.02] via-transparent to-pink-500/[0.02]" />
