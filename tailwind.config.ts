@@ -78,10 +78,21 @@ const config: Config = {
             height: '0',
           },
         },
+        'gradient': {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+        'float': {
+          '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+          '33%': { transform: 'translateY(-10px) rotate(1deg)' },
+          '66%': { transform: 'translateY(5px) rotate(-1deg)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'gradient': 'gradient 8s ease infinite',
+        'float': 'float 20s ease-in-out infinite',
       },
     },
   },

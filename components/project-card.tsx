@@ -69,30 +69,39 @@ export function ProjectCard({
     <>
       <Card
         className={cn(
-          "relative overflow-hidden h-full flex flex-col transition-all duration-200 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)]",
+          "relative overflow-hidden h-full flex flex-col transition-all duration-300 hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] group",
           featured
-            ? "border-primary/30 ring-1 ring-primary/10 shadow-[0_10px_20px_rgba(17,24,39,0.06)] dark:shadow-[0_10px_20px_rgba(0,0,0,0.6)]"
+            ? "border-primary/30 ring-1 ring-primary/20 shadow-[0_15px_35px_rgba(17,24,39,0.08)] dark:shadow-[0_15px_35px_rgba(0,0,0,0.8)]"
             : "border-border"
         )}
       >
+        {/* Enhanced card background effects */}
+        <div className="absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" aria-hidden="true">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.02] via-transparent to-pink-500/[0.02]" />
+          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-radial from-blue-500/5 to-transparent rounded-full blur-xl" />
+          <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-radial from-pink-500/5 to-transparent rounded-full blur-xl" />
+        </div>
+        
         {featured && (
           <div
             className="absolute top-2 left-2 z-10 inline-flex items-center gap-1 rounded-sm border px-2 py-0.5 text-[10px] font-medium 
-            border-border bg-secondary text-secondary-foreground"
+            border-primary/20 bg-gradient-to-r from-blue-500/10 to-pink-500/10 text-primary backdrop-blur-sm"
             aria-label="Featured project"
           >
-            <Star size={12} className="text-primary" />
+            <Star size={12} className="text-primary animate-pulse" />
             Featured
           </div>
         )}
         {/* Image now at the top */}
-        <div className="relative">
+        <div className="relative overflow-hidden">
           <img 
             src={image.src} 
             alt={image.alt} 
-            className="w-full h-48 object-cover cursor-pointer hover:opacity-90 transition-opacity"
+            className="w-full h-48 object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
             onClick={() => openImageModal(image.src, image.alt)}
           />
+          {/* Image overlay effect */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
         
         <CardHeader className="pb-3">
@@ -128,7 +137,7 @@ export function ProjectCard({
               href={link.url}
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center px-2.5 py-0.5 text-xs bg-primary text-primary-foreground border border-primary rounded-sm hover:bg-primary/90 transition-colors"
+              className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gradient-to-r from-blue-500/10 to-pink-500/10 text-primary border border-primary/20 rounded-sm hover:from-blue-500/20 hover:to-pink-500/20 hover:border-primary/40 transition-all duration-200 backdrop-blur-sm"
             >
               {getLinkIcon(link.text)}
               {link.text}

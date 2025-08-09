@@ -31,7 +31,12 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header/Navigation */}
-      <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 relative overflow-hidden">
+        {/* Header animated background */}
+        <div className="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+          <div className="absolute inset-0 bg-[linear-gradient(45deg,rgba(59,130,246,0.03),rgba(236,72,153,0.03),rgba(59,130,246,0.03))] animate-[gradient_8s_ease_infinite]" />
+          <div className="absolute inset-0 opacity-[.04] bg-[linear-gradient(to_right,rgba(var(--foreground-rgb),0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(var(--foreground-rgb),0.1)_1px,transparent_1px)] bg-[size:32px_32px]" />
+        </div>
         <div className="container mx-auto px-4 py-4">
           <MainNav />
         </div>
@@ -89,10 +94,22 @@ export default function Home() {
       </section>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-12 flex-grow">
+      <main className="container mx-auto px-4 py-12 flex-grow relative">
+        {/* Main content subtle background */}
+        <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
+          <div className="absolute top-1/3 -left-40 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl animate-[float_20s_ease-in-out_infinite]" />
+          <div className="absolute bottom-1/3 -right-40 w-80 h-80 bg-pink-500/5 rounded-full blur-3xl animate-[float_25s_ease-in-out_infinite_reverse]" />
+        </div>
+        
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left Column - Projects */}
-          <div className="col-span-1 lg:col-span-2 space-y-6">
+          <div className="col-span-1 lg:col-span-2 space-y-6 relative">
+            {/* Projects section background */}
+            <div className="absolute inset-0 -z-10 overflow-hidden rounded-2xl" aria-hidden="true">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.02] via-transparent to-pink-500/[0.02]" />
+              <div className="absolute inset-0 opacity-[.02] bg-[radial-gradient(circle_at_30%_40%,rgba(59,130,246,0.3),transparent_50%),radial-gradient(circle_at_70%_60%,rgba(236,72,153,0.3),transparent_50%)]" />
+            </div>
+            
             <div className="flex justify-between items-center border-b pb-2">
               <h2 id="projects" className="text-2xl font-bold scroll-m-20">Projects</h2>
               <DropdownMenu>
@@ -114,7 +131,7 @@ export default function Home() {
               </DropdownMenu>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative">
               {sortedProjects.map((project) => (
                 <ProjectCard 
                   key={project.title} // Add key for list rendering
@@ -133,7 +150,13 @@ export default function Home() {
           </div>
 
           {/* Right Column - About Me */}
-          <div className="col-span-1">
+          <div className="col-span-1 relative">
+            {/* About section background */}
+            <div className="absolute inset-0 -z-10 overflow-hidden rounded-2xl" aria-hidden="true">
+              <div className="absolute inset-0 bg-gradient-to-tl from-pink-500/[0.015] via-transparent to-blue-500/[0.015]" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-conic from-blue-500/10 via-pink-500/10 to-blue-500/10 rounded-full blur-2xl animate-[spin_30s_linear_infinite]" />
+            </div>
+            
             <div id="about" className="sticky top-24">
               <h2 className="text-2xl font-bold border-b pb-2 mb-6 scroll-m-20 lg:block hidden">About Me</h2>
               <Card className="overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] transition-all duration-200">
@@ -249,7 +272,13 @@ export default function Home() {
       </main>
       
       {/* Footer */}
-      <footer className="border-t py-6 md:py-0">
+      <footer className="border-t py-6 md:py-0 relative overflow-hidden">
+        {/* Footer animated background */}
+        <div className="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500/[0.02] to-transparent" />
+          <div className="absolute bottom-0 left-1/4 w-64 h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />
+          <div className="absolute bottom-0 right-1/4 w-64 h-px bg-gradient-to-r from-transparent via-pink-500/20 to-transparent animate-pulse" />
+        </div>
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center md:h-16">
             <p className="text-sm text-muted-foreground">© {currentYear} Daniel Hafezian. All rights reserved.</p>
