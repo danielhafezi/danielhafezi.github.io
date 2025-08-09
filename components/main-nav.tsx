@@ -3,70 +3,45 @@
 import * as React from "react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
-import { Menu, X } from "lucide-react"
+import { Github, Mail, type LucideIcon } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 
+type NavItem = {
+  href: string
+  label: string
+  Icon: LucideIcon
+  external?: boolean
+}
+
+const navItems: NavItem[] = [
+  { href: "https://github.com/DanielHafezi", label: "GitHub", Icon: Github, external: true },
+  { href: "mailto:danielhafezian@gmail.com", label: "Contact", Icon: Mail },
+] as const
+
 export function MainNav() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false)
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
-
   return (
-    <div className="flex items-center justify-between w-full">
-      <button
-        onClick={toggleMenu}
-        className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
-        aria-label="Toggle menu"
+    <div className="relative flex items-center justify-between w-full">
+      <nav
+        className={cn(
+          "flex items-center gap-3 md:gap-6"
+        )}
       >
-        {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-      </button>
-
-      <nav className={cn(
-        "md:flex md:space-x-8",
-        isMenuOpen
-          ? "absolute left-0 right-0 top-full bg-background border-b border-border p-4 space-y-4 shadow-lg md:shadow-none z-50"
-          : "hidden"
-        , "md:relative md:p-0 md:space-y-0 md:bg-transparent md:border-none md:flex"
-      )}>
-        <Link 
-          href="/#home"
-          className="text-primary hover:text-primary/80 transition-colors block"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          Home
-        </Link>
-        <Link 
-          href="/#about" 
-          className="text-primary hover:text-primary/80 transition-colors block"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          About
-        </Link>
-        <Link 
-          href="/#projects" 
-          className="text-primary hover:text-primary/80 transition-colors block"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          Projects
-        </Link>
-        <Link 
-          href="https://github.com/DanielHafezi" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="text-primary hover:text-primary/80 transition-colors block"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          GitHub Profile
-        </Link>
-        <Link 
-          href="mailto:danielhafezian@gmail.com" 
-          className="text-primary hover:text-primary/80 transition-colors block"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          Contact
-        </Link>
+        {navItems.map(({ href, label, Icon, external }) => (
+          <Link
+            key={label}
+            href={href}
+            target={external ? "_blank" : undefined}
+            rel={external ? "noopener noreferrer" : undefined}
+            className="inline-flex items-center gap-2 rounded-md p-2 text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+            aria-label={label}
+            title={label}
+          >
+            <Icon className="h-5 w-5" />
+            <span className="hidden md:inline text-sm font-medium text-primary hover:text-primary/80">
+              {label}
+            </span>
+          </Link>
+        ))}
       </nav>
 
       <ThemeToggle />

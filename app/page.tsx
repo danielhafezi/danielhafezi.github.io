@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header/Navigation */}
-      <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 relative overflow-hidden">
+      <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 relative">
         {/* Header animated background */}
         <div className="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
           <div className="absolute inset-0 bg-[linear-gradient(45deg,rgba(59,130,246,0.03),rgba(236,72,153,0.03),rgba(59,130,246,0.03))] animate-[gradient_8s_ease_infinite]" />
