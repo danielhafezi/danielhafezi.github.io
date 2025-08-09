@@ -71,7 +71,7 @@ export function ProjectCard({
         className={cn(
           "relative overflow-hidden h-full flex flex-col transition-all duration-300 hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] group",
           featured
-            ? "border-primary/30 ring-1 ring-primary/20 shadow-[0_15px_35px_rgba(17,24,39,0.08)] dark:shadow-[0_15px_35px_rgba(0,0,0,0.8)]"
+            ? "border-0 backdrop-blur-md supports-[backdrop-filter]:backdrop-blur-md bg-gradient-to-br from-white/60 to-white/30 dark:from-white/[0.08] dark:to-white/[0.02] shadow-[0_15px_35px_rgba(17,24,39,0.08)] dark:shadow-[0_15px_35px_rgba(0,0,0,0.6)]"
             : "border-border"
         )}
       >
@@ -84,11 +84,13 @@ export function ProjectCard({
         
         {featured && (
           <div
-            className="absolute top-2 left-2 z-10 inline-flex items-center gap-1 rounded-sm border px-2 py-0.5 text-[10px] font-medium 
-            border-primary/20 bg-gradient-to-r from-blue-500/10 to-pink-500/10 text-primary backdrop-blur-sm"
+            className="absolute top-2 left-2 z-10 inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-[10px] font-medium
+            bg-white/70 dark:bg-black/60 bg-gradient-to-r from-blue-500/20 to-pink-500/20
+            text-black dark:text-white supports-[backdrop-filter]:backdrop-blur-md backdrop-saturate-150
+            ring-1 ring-black/10 dark:ring-white/15 shadow-[0_4px_18px_rgba(0,0,0,0.25)]"
             aria-label="Featured project"
           >
-            <Star size={12} className="text-primary animate-pulse" />
+            <Star size={12} className="text-black dark:text-white/90 drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)] animate-pulse" />
             Featured
           </div>
         )}
