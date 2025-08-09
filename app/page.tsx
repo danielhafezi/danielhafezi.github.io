@@ -151,46 +151,21 @@ export default function Home() {
 
           {/* Right Column - About Me */}
           <div className="col-span-1 relative">
+            {/* About section background */}
+            <div className="absolute inset-0 -z-10 overflow-hidden rounded-2xl" aria-hidden="true">
+              <div className="absolute inset-0 bg-gradient-to-tl from-pink-500/[0.015] via-transparent to-blue-500/[0.015]" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-conic from-blue-500/10 via-pink-500/10 to-blue-500/10 rounded-full blur-2xl animate-[spin_30s_linear_infinite]" />
+            </div>
+            
             <div id="about" className="sticky top-24">
               <h2 className="text-2xl font-bold border-b pb-2 mb-6 scroll-m-20 lg:block hidden">About Me</h2>
-              <Card className="overflow-hidden relative group transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1
-                bg-white/[0.02] dark:bg-white/[0.02] backdrop-blur-xl
-                border border-white/10 dark:border-white/10
-                shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.24)]
-                hover:shadow-[0_20px_40px_rgba(0,0,0,0.15)] dark:hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]
-                hover:bg-white/[0.04] dark:hover:bg-white/[0.04]
-                hover:border-white/20 dark:hover:border-white/20">
-                
-                {/* Liquid glassy background effects */}
-                <div className="absolute inset-0 -z-10" aria-hidden="true">
-                  {/* Base glass gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.04] via-transparent to-pink-500/[0.04] opacity-70" />
-                  
-                  {/* Animated shimmer effect */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/8 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-1200 ease-out" />
-                  </div>
-                  
-                  {/* Floating glass orbs */}
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-conic from-blue-500/8 via-pink-500/6 to-blue-500/8 rounded-full blur-2xl animate-[spin_25s_linear_infinite]" />
-                  <div className="absolute bottom-1/4 left-0 w-20 h-20 bg-gradient-radial from-pink-400/10 to-transparent rounded-full blur-xl opacity-60 animate-pulse" />
-                  <div className="absolute top-1/2 right-1/4 w-16 h-16 bg-gradient-radial from-blue-400/8 to-transparent rounded-full blur-lg opacity-80" />
-                  
-                  {/* Glass texture overlay */}
-                  <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(circle_at_30%_40%,rgba(255,255,255,0.6),transparent_50%),radial-gradient(circle_at_70%_60%,rgba(255,255,255,0.4),transparent_50%)] mix-blend-overlay" />
-                  
-                  {/* Subtle grid pattern for glass texture */}
-                  <div className="absolute inset-0 opacity-[0.015] bg-[linear-gradient(to_right,rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px]" />
-                </div>
-                
+              <Card className="overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] transition-all duration-200">
                 <div className="relative">
                   <img 
                     src="/ProfilePicture.png" 
                     alt="Daniel Hafezian" 
-                    className="w-full h-64 object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-64 object-cover object-top"
                   />
-                  {/* Glass overlay on image */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
                 <div className="p-6 space-y-6">
                   <div>
@@ -205,44 +180,44 @@ export default function Home() {
                       <div>
                         <div className="text-sm font-medium mb-1.5">Frontend:</div>
                         <div className="flex flex-wrap gap-1.5">
-                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-white/10 text-foreground border border-white/20 rounded-full backdrop-blur-sm hover:bg-white/20 transition-colors">React</span>
-                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-white/10 text-foreground border border-white/20 rounded-full backdrop-blur-sm hover:bg-white/20 transition-colors">Next.js</span>
-                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-white/10 text-foreground border border-white/20 rounded-full backdrop-blur-sm hover:bg-white/20 transition-colors">Shadcn UI</span>
-                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-white/10 text-foreground border border-white/20 rounded-full backdrop-blur-sm hover:bg-white/20 transition-colors">TypeScript</span>
-                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-white/10 text-foreground border border-white/20 rounded-full backdrop-blur-sm hover:bg-white/20 transition-colors">Framer Motion</span>
-                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-white/10 text-foreground border border-white/20 rounded-full backdrop-blur-sm hover:bg-white/20 transition-colors">Tailwind CSS</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">React</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">Next.js</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">Shadcn UI</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">TypeScript</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">Framer Motion</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">Tailwind CSS</span>
                         </div>
                       </div>
                       
                       <div>
                         <div className="text-sm font-medium mb-1.5">Backend:</div>
                         <div className="flex flex-wrap gap-1.5">
-                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-white/10 text-foreground border border-white/20 rounded-full backdrop-blur-sm hover:bg-white/20 transition-colors">Node.js</span>
-                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-white/10 text-foreground border border-white/20 rounded-full backdrop-blur-sm hover:bg-white/20 transition-colors">FastAPI</span>
-                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-white/10 text-foreground border border-white/20 rounded-full backdrop-blur-sm hover:bg-white/20 transition-colors">RESTful APIs</span>
-                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-white/10 text-foreground border border-white/20 rounded-full backdrop-blur-sm hover:bg-white/20 transition-colors">PostgreSQL</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">Node.js</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">FastAPI</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">RESTful APIs</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">PostgreSQL</span>
                         </div>
                       </div>
                       
                       <div>
                         <div className="text-sm font-medium mb-1.5">AI & ML:</div>
                         <div className="flex flex-wrap gap-1.5">
-                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-white/10 text-foreground border border-white/20 rounded-full backdrop-blur-sm hover:bg-white/20 transition-colors">Python</span>
-                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-white/10 text-foreground border border-white/20 rounded-full backdrop-blur-sm hover:bg-white/20 transition-colors">LLM APIs</span>
-                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-white/10 text-foreground border border-white/20 rounded-full backdrop-blur-sm hover:bg-white/20 transition-colors">Chatbots</span>
-                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-white/10 text-foreground border border-white/20 rounded-full backdrop-blur-sm hover:bg-white/20 transition-colors">Fine-tuning</span>
-                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-white/10 text-foreground border border-white/20 rounded-full backdrop-blur-sm hover:bg-white/20 transition-colors">RAG</span>
-                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-white/10 text-foreground border border-white/20 rounded-full backdrop-blur-sm hover:bg-white/20 transition-colors">LangChain</span>
-                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-white/10 text-foreground border border-white/20 rounded-full backdrop-blur-sm hover:bg-white/20 transition-colors">TensorFlow</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">Python</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">LLM APIs</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">Chatbots</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">Fine-tuning</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">RAG</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">LangChain</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">TensorFlow</span>
                         </div>
                       </div>
                       
                       <div>
                         <div className="text-sm font-medium mb-1.5">Cloud:</div>
                         <div className="flex flex-wrap gap-1.5">
-                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-white/10 text-foreground border border-white/20 rounded-full backdrop-blur-sm hover:bg-white/20 transition-colors">Azure</span>
-                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-white/10 text-foreground border border-white/20 rounded-full backdrop-blur-sm hover:bg-white/20 transition-colors">Docker</span>
-                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-white/10 text-foreground border border-white/20 rounded-full backdrop-blur-sm hover:bg-white/20 transition-colors">GitHub Actions</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">Azure</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">Docker</span>
+                          <span className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm">GitHub Actions</span>
                         </div>
                       </div>
                     </div>
@@ -252,14 +227,14 @@ export default function Home() {
                     <h3 className="font-semibold mb-2">Professional Experience</h3>
                     <div className="space-y-3 text-sm">
                       <div className="flex items-start">
-                        <Briefcase size={16} className="text-blue-400 mr-2 mt-1 shrink-0" />
+                        <Briefcase size={16} className="text-primary mr-2 mt-1 shrink-0" />
                         <div>
                           <p className="font-medium">Full Stack Developer, Bahamta</p>
                           <p className="text-xs text-muted-foreground">September 2021 - February 2023</p>
                         </div>
                       </div>
                       <div className="flex items-start">
-                        <Briefcase size={16} className="text-blue-400 mr-2 mt-1 shrink-0" />
+                        <Briefcase size={16} className="text-primary mr-2 mt-1 shrink-0" />
                         <div>
                           <p className="font-medium">Python Developer, Fandogh PaaS</p>
                           <p className="text-xs text-muted-foreground">October 2020 - August 2021</p>
@@ -272,20 +247,20 @@ export default function Home() {
                     <h3 className="font-semibold mb-2">Contact</h3>
                     <div className="space-y-2 text-sm">
                       <div className="flex items-center">
-                        <Mail size={16} className="text-blue-400 mr-2 shrink-0" />
-                        <a href="mailto:danielhafezian@gmail.com" className="hover:text-blue-400 transition-colors">danielhafezian@gmail.com</a>
+                        <Mail size={16} className="text-primary mr-2 shrink-0" />
+                        <a href="mailto:danielhafezian@gmail.com" className="hover:text-primary transition-colors">danielhafezian@gmail.com</a>
                       </div>
                       <div className="flex items-center">
-                        <Phone size={16} className="text-blue-400 mr-2 shrink-0" />
+                        <Phone size={16} className="text-primary mr-2 shrink-0" />
                         <span className="text-muted-foreground">(+44) 749 749 8257</span>
                       </div>
                       <div className="flex items-center">
-                        <Github size={16} className="text-blue-400 mr-2 shrink-0" />
-                        <a href="https://github.com/DanielHafezi" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">GitHub</a>
+                        <Github size={16} className="text-primary mr-2 shrink-0" />
+                        <a href="https://github.com/DanielHafezi" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">GitHub</a>
                       </div>
                       <div className="flex items-center">
-                        <Linkedin size={16} className="text-blue-400 mr-2 shrink-0" />
-                        <a href="https://www.linkedin.com/in/danielhafezi" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors">LinkedIn</a>
+                        <Linkedin size={16} className="text-primary mr-2 shrink-0" />
+                        <a href="https://www.linkedin.com/in/danielhafezi" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">LinkedIn</a>
                       </div>
                     </div>
                   </div>
