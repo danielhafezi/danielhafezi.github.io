@@ -69,43 +69,65 @@ export function ProjectCard({
     <>
       <Card
         className={cn(
-          "relative overflow-hidden h-full flex flex-col transition-all duration-300 hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] group",
+          "relative overflow-hidden h-full flex flex-col transition-all duration-500 group",
+          "bg-white/[0.02] dark:bg-white/[0.02] backdrop-blur-xl",
+          "border border-white/10 dark:border-white/10",
+          "shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.24)]",
+          "hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]",
+          "hover:bg-white/[0.04] dark:hover:bg-white/[0.04]",
+          "hover:border-white/20 dark:hover:border-white/20",
+          "hover:scale-[1.02] hover:-translate-y-2",
           featured
-            ? "border-primary/30 ring-1 ring-primary/20 shadow-[0_15px_35px_rgba(17,24,39,0.08)] dark:shadow-[0_15px_35px_rgba(0,0,0,0.8)]"
-            : "border-border"
+            ? "ring-1 ring-blue-400/20 dark:ring-blue-400/20 shadow-[0_0_20px_rgba(59,130,246,0.15)] dark:shadow-[0_0_20px_rgba(59,130,246,0.25)]"
+            : ""
         )}
       >
-        {/* Enhanced card background effects */}
-        <div className="absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" aria-hidden="true">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.02] via-transparent to-pink-500/[0.02]" />
-          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-radial from-blue-500/5 to-transparent rounded-full blur-xl" />
-          <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-radial from-pink-500/5 to-transparent rounded-full blur-xl" />
+        {/* Liquid glassy background effects */}
+        <div className="absolute inset-0 -z-10" aria-hidden="true">
+          {/* Base glass effect */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.03] via-transparent to-pink-500/[0.03] opacity-60" />
+          
+          {/* Shimmer effect */}
+          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-1000 ease-out" />
+          </div>
+          
+          {/* Floating glass orbs */}
+          <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-radial from-blue-400/10 to-transparent rounded-full blur-xl animate-pulse" />
+          <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-radial from-pink-400/8 to-transparent rounded-full blur-2xl opacity-70" />
+          
+          {/* Glass texture overlay */}
+          <div className="absolute inset-0 opacity-[0.02] bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.8),transparent_70%)] mix-blend-overlay" />
         </div>
         
         {featured && (
           <div
-            className="absolute top-2 left-2 z-10 inline-flex items-center gap-1 rounded-sm border px-2 py-0.5 text-[10px] font-medium 
-            border-primary/20 bg-gradient-to-r from-blue-500/10 to-pink-500/10 text-primary backdrop-blur-sm"
+            className="absolute top-3 left-3 z-10 inline-flex items-center gap-1 rounded-full border px-3 py-1 text-[10px] font-medium 
+            border-blue-400/30 bg-blue-500/10 backdrop-blur-xl text-blue-400 shadow-lg"
             aria-label="Featured project"
           >
-            <Star size={12} className="text-primary animate-pulse" />
+            <Star size={10} className="text-blue-400 animate-pulse fill-current" />
             Featured
           </div>
         )}
+        
         {/* Image now at the top */}
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden rounded-t-lg">
           <img 
             src={image.src} 
             alt={image.alt} 
-            className="w-full h-48 object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
+            className="w-full h-48 object-cover cursor-pointer hover:scale-110 transition-transform duration-700"
             onClick={() => openImageModal(image.src, image.alt)}
           />
           {/* Image overlay effect */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="absolute inset-0 bg-gradient-to-t from-blue-500/5 to-transparent opacity-0 group-hover:opacity-50 transition-opacity duration-500" />
         </div>
         
         <CardHeader className="pb-3">
-          <CardTitle className="text-xl text-primary">{title}</CardTitle>
+          <CardTitle className="text-xl bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent font-semibold">
+            {title}
+          </CardTitle>
         </CardHeader>
         
         <CardContent className="pb-4 flex-grow">
@@ -121,7 +143,7 @@ export function ProjectCard({
               {technologies.map((tech, index) => (
                 <span 
                   key={index} 
-                  className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gray-200 text-black dark:bg-gray-700 dark:text-gray-200 border border-border rounded-sm"
+                  className="inline-flex items-center px-2.5 py-0.5 text-xs bg-white/10 text-foreground border border-white/20 rounded-full backdrop-blur-sm hover:bg-white/20 transition-colors"
                 >
                   {tech.name}
                 </span>
@@ -137,7 +159,7 @@ export function ProjectCard({
               href={link.url}
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center px-2.5 py-0.5 text-xs bg-gradient-to-r from-blue-500/10 to-pink-500/10 text-primary border border-primary/20 rounded-sm hover:from-blue-500/20 hover:to-pink-500/20 hover:border-primary/40 transition-all duration-200 backdrop-blur-sm"
+              className="inline-flex items-center px-3 py-1.5 text-xs bg-white/5 hover:bg-white/10 text-foreground border border-white/20 hover:border-white/40 rounded-full backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:shadow-lg"
             >
               {getLinkIcon(link.text)}
               {link.text}
