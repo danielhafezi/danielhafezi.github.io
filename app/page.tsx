@@ -103,7 +103,7 @@ export default function Home() {
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left Column - Projects */}
-          <div className="col-span-1 lg:col-span-2 space-y-6 relative">
+          <div className="col-span-1 lg:col-span-2 space-y-6 relative lg:-mt-2">
             {/* Projects section background */}
             <div className="absolute inset-0 -z-10 overflow-hidden rounded-2xl" aria-hidden="true">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/[0.02] via-transparent to-pink-500/[0.02]" />
