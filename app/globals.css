@@ -2,99 +2,466 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+/* Color Palette: Dark Navy with Pink & Teal */
+/* Background: #12242e, Primary: #fbe2a7, Secondary: #e4a2b1, Ring: #50afb6 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-  }
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
+    /* Warm dark palette to harmonize with red accents */
+    --background: 0 0% 9%;
+    /* #171717 - Warm dark charcoal */
+    --foreground: 0 0% 93%;
+    /* #ededed - Warm white */
+    --card: 0 0% 12%;
+    /* #1f1f1f - Slightly lighter charcoal */
+    --card-foreground: 0 0% 93%;
+    /* #ededed */
+    --popover: 0 0% 12%;
+    /* #1f1f1f */
+    --popover-foreground: 0 0% 93%;
+    /* #ededed */
+    --primary: 24 95% 53%;
+    /* #f97316 - Orange */
     --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    /* #171717 */
+    --secondary: 0 84% 50%;
+    /* #dc2626 - Red */
+    --secondary-foreground: 0 0% 93%;
+    /* #ededed */
+    --muted: 0 0% 15%;
+    /* #262626 - Muted dark */
+    --muted-foreground: 0 0% 65%;
+    /* #a3a3a3 - Gray */
+    --accent: 12 90% 55%;
+    /* #ef4444 - Lighter red */
+    --accent-foreground: 0 0% 93%;
+    /* #ededed */
+    --destructive: 0 84% 50%;
+    /* #dc2626 - Red */
+    --destructive-foreground: 0 0% 93%;
+    /* #ededed */
+    --border: 0 0% 20%;
+    /* #333333 - Dark border */
+    --input: 0 0% 15%;
+    /* #262626 - Input bg */
+    --ring: 24 95% 53%;
+    /* #f97316 - Orange */
+    --accent-red: 0 84% 50%;
+    /* #dc2626 - Vivid red */
+    --chart-1: 0 84% 50%;
+    /* #dc2626 - Red */
+    --chart-2: 345 53% 76%;
+    /* #e4a2b1 - Pink */
+    --chart-3: 338 38% 63%;
+    /* #c67b96 - Mauve */
+    --chart-4: 190 66% 26%;
+    /* #175c6c - Dark teal */
+    --chart-5: 214 8% 16%;
+    /* #24272b - Dark */
+    --radius: 0.4rem;
   }
+
 }
 
 @layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
-  
+
   /* Custom animations */
   @keyframes gradient {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
   }
-  
+
   @keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    33% { transform: translateY(-10px) rotate(1deg); }
-    66% { transform: translateY(5px) rotate(-1deg); }
+
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+
+    33% {
+      transform: translateY(-10px) rotate(1deg);
+    }
+
+    66% {
+      transform: translateY(5px) rotate(-1deg);
+    }
   }
-  
+
   /* Enhance existing animations */
   .animate-gradient {
     background-size: 200% 200%;
     animation: gradient 8s ease infinite;
   }
+}
+
+/* Timeline styles */
+.timeline-container {
+  position: relative;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom,
+      transparent,
+      hsl(var(--muted-foreground) / 0.3) 10%,
+      hsl(var(--muted-foreground) / 0.3) 90%,
+      transparent);
+}
+
+@media (min-width: 1024px) {
+  .timeline-line {
+    left: 24px;
+  }
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -5px;
+  top: 24px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: hsl(var(--background));
+  border: 2px solid hsl(var(--muted-foreground) / 0.5);
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 1024px) {
+  .timeline-dot {
+    left: 19px;
+  }
+}
+
+.timeline-item:hover .timeline-dot {
+  border-color: hsl(var(--primary));
+  background: hsl(var(--primary) / 0.1);
+  transform: scale(1.2);
+}
+
+.timeline-connector {
+  position: absolute;
+  left: 7px;
+  top: 28px;
+  width: 24px;
+  height: 2px;
+  background: hsl(var(--muted-foreground) / 0.3);
+}
+
+@media (min-width: 1024px) {
+  .timeline-connector {
+    left: 31px;
+    width: 32px;
+  }
+}
+
+/* Stagger animation for timeline items */
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.timeline-item {
+  animation: slideInFromRight 0.5s ease forwards;
+  opacity: 0;
+}
+
+.timeline-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.timeline-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.timeline-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.timeline-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.timeline-item:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.timeline-item:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.timeline-item:nth-child(7) {
+  animation-delay: 0.7s;
+}
+
+.timeline-item:nth-child(8) {
+  animation-delay: 0.8s;
+}
+
+.timeline-item:nth-child(9) {
+  animation-delay: 0.9s;
+}
+
+.timeline-item:nth-child(10) {
+  animation-delay: 1.0s;
+}
+
+.timeline-item:nth-child(n+11) {
+  animation-delay: 1.1s;
+}
+
+/* Timeline Annotation Styles */
+.annotation-text {
+  font-family: var(--font-handwriting), cursive;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  color: #dc2626;
+  max-width: 180px;
+}
+
+.annotation-arrow {
+  color: #dc2626;
+  stroke: #dc2626;
+  fill: none;
+  stroke-width: 2;
+}
+
+.annotation-bracket {
+  color: #dc2626;
+  font-size: 4rem;
+  line-height: 1;
+  font-weight: 300;
+}
+
+/* Annotation container positioning */
+.timeline-annotation-left {
+  position: absolute;
+  right: calc(50% + 2rem);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.timeline-annotation-right {
+  position: absolute;
+  left: calc(50% + 2rem);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
+}
+
+/* Bracket spanning multiple cards */
+.bracket-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bracket-left {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+}
+
+.bracket-right {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* ============================================
+   SVG Draw-on-Scroll Animation Styles
+   ============================================ */
+
+/* Initial state: stroke is hidden (dashoffset equals dasharray) */
+.svg-draw-initial path {
+  stroke-dasharray: var(--path-length, 500);
+  stroke-dashoffset: var(--path-length, 500);
+  opacity: 0;
+}
+
+/* Animated state: stroke is fully visible */
+.svg-draw-animated path {
+  stroke-dasharray: var(--path-length, 500);
+  stroke-dashoffset: 0;
+  opacity: 1;
+  transition:
+    stroke-dashoffset 1.2s cubic-bezier(0.65, 0, 0.35, 1),
+    opacity 0.3s ease-out;
+}
+
+/* Arrow-specific animation (slightly longer for visual effect) */
+.svg-draw-arrow.svg-draw-animated path {
+  transition:
+    stroke-dashoffset 1.4s cubic-bezier(0.65, 0, 0.35, 1),
+    opacity 0.3s ease-out;
+}
+
+/* Bracket-specific animation (shorter for quicker feel) */
+.svg-draw-bracket.svg-draw-animated path {
+  transition:
+    stroke-dashoffset 1s cubic-bezier(0.65, 0, 0.35, 1),
+    opacity 0.3s ease-out;
+}
+
+/* Filled elements (like arrow heads) should fade in after stroke */
+.svg-draw-initial path[fill]:not([fill="none"]) {
+  opacity: 0;
+  transition: opacity 0.3s ease-out 1s;
+  /* Delay matches stroke animation */
+}
+
+.svg-draw-animated path[fill]:not([fill="none"]) {
+  opacity: 1;
+  transition: opacity 0.3s ease-out 0.9s;
+  /* Fade in near end of stroke */
+}
+
+/* Mobile arrow animation */
+.svg-draw-mobile.svg-draw-animated path {
+  transition:
+    stroke-dashoffset 0.8s cubic-bezier(0.65, 0, 0.35, 1),
+    opacity 0.2s ease-out;
+}
+
+/* Annotation text fade-in to accompany SVG drawing */
+.annotation-draw-text {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.5s ease-out,
+    transform 0.5s ease-out;
+}
+
+.annotation-draw-text.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays for multiple paths in same SVG */
+.svg-draw-animated path:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.svg-draw-animated path:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+/* ============================================
+   Hand-Drawn Doodle Animation Styles
+   ============================================ */
+
+/* Doodle-specific animation (slower, more relaxed drawing) */
+.svg-draw-doodle.svg-draw-animated path {
+  transition:
+    stroke-dashoffset 2.5s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.5s ease-out;
+}
+
+/* Stagger additional paths in doodles (slower delays) */
+.svg-draw-doodle.svg-draw-animated path:nth-child(4) {
+  transition-delay: 0.5s;
+}
+
+.svg-draw-doodle.svg-draw-animated path:nth-child(5) {
+  transition-delay: 0.7s;
+}
+
+.svg-draw-doodle.svg-draw-animated path:nth-child(6) {
+  transition-delay: 0.9s;
+}
+
+/* Circle elements in doodles */
+.svg-draw-doodle.svg-draw-initial circle {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  opacity: 0;
+}
+
+.svg-draw-doodle.svg-draw-animated circle {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 0;
+  opacity: 1;
+  transition:
+    stroke-dashoffset 1.5s cubic-bezier(0.4, 0, 0.2, 1) 0.6s,
+    opacity 0.4s ease-out 0.6s;
+}
+
+/* Rect elements in doodles */
+.svg-draw-doodle.svg-draw-initial rect {
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+  opacity: 0;
+}
+
+.svg-draw-doodle.svg-draw-animated rect {
+  stroke-dasharray: 150;
+  stroke-dashoffset: 0;
+  opacity: 1;
+  transition:
+    stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.8s,
+    opacity 0.4s ease-out 0.8s;
+}
+
+/* Text elements in doodles (fade in at end) */
+.svg-draw-doodle.svg-draw-initial text {
+  opacity: 0;
+}
+
+.svg-draw-doodle.svg-draw-animated text {
+  opacity: 1;
+  transition: opacity 0.5s ease-out 1.8s;
+}
+
+/* Filled circles (dots) in doodles */
+.svg-draw-doodle circle[fill]:not([fill="none"]) {
+  opacity: 0;
+  transition: opacity 0.4s ease-out 1.5s;
+}
+
+.svg-draw-doodle.svg-draw-animated circle[fill]:not([fill="none"]) {
+  opacity: 1;
+}
+
+/* Subtle float animation for doodles */
+@keyframes doodle-float {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-5px) rotate(2deg);
+  }
+}
+
+.doodle-float {
+  animation: doodle-float 6s ease-in-out infinite;
 }

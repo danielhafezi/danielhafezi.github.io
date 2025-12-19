@@ -4,7 +4,6 @@ import * as React from "react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { Github, Mail, type LucideIcon } from "lucide-react"
-import { ThemeToggle } from "@/components/theme-toggle"
 
 type NavItem = {
   href: string
@@ -43,8 +42,6 @@ export function MainNav() {
           </Link>
         ))}
       </nav>
-
-      <ThemeToggle />
     </div>
   )
 }

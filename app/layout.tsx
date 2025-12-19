@@ -1,10 +1,13 @@
 import "./globals.css"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Poppins, Lora, Fira_Code, Caveat } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
 
-const inter = Inter({ subsets: ["latin"] })
+const poppins = Poppins({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], variable: "--font-sans" })
+const lora = Lora({ subsets: ["latin"], variable: "--font-display" })
+const firaCode = Fira_Code({ subsets: ["latin"], variable: "--font-mono" })
+const caveat = Caveat({ subsets: ["latin"], variable: "--font-handwriting" })
 
 export const metadata: Metadata = {
   title: "Daniel Hafezian",
@@ -21,14 +24,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn(inter.className, "min-h-screen antialiased")}>
+      <body className={cn(poppins.variable, lora.variable, firaCode.variable, caveat.variable, "min-h-screen antialiased font-sans")}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="dark"
+          forcedTheme="dark"
           disableTransitionOnChange
         >
           {children}
+          {/* Global SVG Filter for Sketchy Borders */}
+          <svg style={{ visibility: 'hidden', position: 'absolute', width: 0, height: 0 }} aria-hidden="true">
+            <filter id="rough-border">
+              <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" result="noise" />
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+            </filter>
+          </svg>
         </ThemeProvider>
       </body>
     </html>
