@@ -252,9 +252,9 @@ export default function Home() {
                 <div className="flex justify-center lg:justify-start mb-2">
                   <div className="relative group">
                     {/* Glow effect */}
-                    <div className="absolute -inset-1 bg-gradient-to-r from-[#991b1b] to-[#dc2626] rounded-full blur-md opacity-40 group-hover:opacity-60 transition-opacity duration-300" />
+                    <div className="absolute -inset-1 bg-gradient-to-r from-[#991b1b] to-[#dc2626] rounded-2xl blur-md opacity-40 group-hover:opacity-60 transition-opacity duration-300" />
                     {/* Image container */}
-                    <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden ring-2 ring-white/10 group-hover:ring-white/20 transition-all duration-300">
+                    <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden ring-2 ring-white/10 group-hover:ring-white/20 transition-all duration-300">
                       <img
                         src="/ProfilePicture.webp"
                         alt="Daniel Hafezi"
