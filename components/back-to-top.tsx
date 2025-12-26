@@ -11,14 +11,14 @@ export function BackToTop() {
     // Show button after scrolling past 100vh (first viewport)
     const scrollThreshold = window.innerHeight;
     const shouldBeVisible = window.scrollY > scrollThreshold;
-    
+
     setIsVisible(shouldBeVisible);
   }, []);
 
   useEffect(() => {
     // Throttle function to limit how often handleScroll runs
     let timeoutId: ReturnType<typeof setTimeout> | null = null;
-    
+
     const throttledScroll = () => {
       if (timeoutId === null) {
         timeoutId = setTimeout(() => {
@@ -32,7 +32,7 @@ export function BackToTop() {
     handleScroll();
 
     window.addEventListener("scroll", throttledScroll, { passive: true });
-    
+
     return () => {
       window.removeEventListener("scroll", throttledScroll);
       if (timeoutId) {
@@ -58,14 +58,14 @@ export function BackToTop() {
         "w-12 h-12 rounded-full",
         "flex items-center justify-center",
         // Gradient background matching theme
-        "bg-gradient-to-br from-[#dc2626] to-[#f97316]",
+        "bg-gradient-to-br from-[#991b1b] to-[#dc2626]",
         // Shadow for depth
-        "shadow-lg shadow-[#dc2626]/25",
+        "shadow-lg shadow-[#991b1b]/25",
         // Hover effects
-        "hover:shadow-xl hover:shadow-[#dc2626]/40",
+        "hover:shadow-xl hover:shadow-[#b91c1c]/40",
         "hover:scale-110",
         // Focus styles for accessibility
-        "focus:outline-none focus:ring-2 focus:ring-[#f97316] focus:ring-offset-2 focus:ring-offset-[#171717]",
+        "focus:outline-none focus:ring-2 focus:ring-[#f87171] focus:ring-offset-2 focus:ring-offset-[#171717]",
         // Smooth transitions
         "transition-all duration-300 ease-out",
         // Visibility animation - fade and scale

@@ -205,22 +205,22 @@ export default function Home() {
           {/* Primary aurora effect - larger and more colorful */}
           {/* Slowest parallax (0.15x) - appears furthest back */}
           <div
-            className="absolute -inset-[200px] blur-[100px] opacity-50 animate-[spin_30s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,_rgba(220,38,38,0.35),_rgba(249,115,22,0.3),_rgba(23,23,23,0.5),_rgba(220,38,38,0.35))]"
+            className="absolute -inset-[200px] blur-[100px] opacity-50 animate-[spin_30s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,_rgba(127,29,29,0.4),_rgba(185,28,28,0.35),_rgba(23,23,23,0.5),_rgba(127,29,29,0.4))]"
             style={getParallaxStyle(0.15)}
           />
 
           {/* Floating orbs - warm red/orange with parallax effect */}
           {/* Different parallax speeds create depth layering */}
           <div
-            className="absolute top-1/4 -left-20 w-96 h-96 bg-[#dc2626]/12 rounded-full blur-[80px] animate-[float_15s_ease-in-out_infinite]"
+            className="absolute top-1/4 -left-20 w-96 h-96 bg-[#991b1b]/15 rounded-full blur-[80px] animate-[float_15s_ease-in-out_infinite]"
             style={getParallaxStyle(0.3)}
           />
           <div
-            className="absolute top-1/2 -right-20 w-80 h-80 bg-[#f97316]/15 rounded-full blur-[80px] animate-[float_20s_ease-in-out_infinite_reverse]"
+            className="absolute top-1/2 -right-20 w-80 h-80 bg-[#b91c1c]/12 rounded-full blur-[80px] animate-[float_20s_ease-in-out_infinite_reverse]"
             style={getParallaxStyle(0.4)}
           />
           <div
-            className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-[#dc2626]/10 rounded-full blur-[80px] animate-[float_25s_ease-in-out_infinite]"
+            className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-[#7f1d1d]/15 rounded-full blur-[80px] animate-[float_25s_ease-in-out_infinite]"
             style={getParallaxStyle(0.35)}
           />
 
@@ -236,7 +236,7 @@ export default function Home() {
 
         {/* Cursor spotlight - red/orange */}
         <div
-          className="fixed inset-0 -z-10 pointer-events-none bg-[radial-gradient(400px_400px_at_var(--mx)_var(--my),rgba(220,38,38,0.08),rgba(249,115,22,0.05),transparent_60%)]"
+          className="fixed inset-0 -z-10 pointer-events-none bg-[radial-gradient(400px_400px_at_var(--mx)_var(--my),rgba(185,28,28,0.1),rgba(220,38,38,0.06),transparent_60%)]"
           aria-hidden="true"
         />
 
@@ -246,13 +246,13 @@ export default function Home() {
             <div id="about" className="lg:sticky lg:top-12 space-y-8">
               {/* Hero info integrated into sidebar */}
               <div className="space-y-4">
-                <p className="text-xs uppercase tracking-[0.3em] text-[#f97316]/80 font-medium">About Me</p>
+                <p className="text-xs uppercase tracking-[0.3em] text-[#f87171]/80 font-medium">About Me</p>
 
                 {/* Profile Picture */}
                 <div className="flex justify-center lg:justify-start mb-2">
                   <div className="relative group">
                     {/* Glow effect */}
-                    <div className="absolute -inset-1 bg-gradient-to-r from-[#dc2626] to-[#f97316] rounded-full blur-md opacity-40 group-hover:opacity-60 transition-opacity duration-300" />
+                    <div className="absolute -inset-1 bg-gradient-to-r from-[#991b1b] to-[#dc2626] rounded-full blur-md opacity-40 group-hover:opacity-60 transition-opacity duration-300" />
                     {/* Image container */}
                     <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden ring-2 ring-white/10 group-hover:ring-white/20 transition-all duration-300">
                       <img
@@ -267,7 +267,7 @@ export default function Home() {
                 <h1 className="text-5xl md:text-6xl font-sans font-bold tracking-tight">
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/60">Daniel</span>
                   <br />
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#dc2626] to-[#f97316]">Hafezian</span>
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#dc2626] to-[#f87171]">Hafezian</span>
                 </h1>
                 <h2 className="text-xl md:text-2xl font-semibold text-white/90">
                   Full Stack Developer
@@ -300,7 +300,7 @@ export default function Home() {
               <div className="space-y-3">
                 <div className="flex flex-wrap gap-2">
                   {['React', 'Next.js', 'TypeScript', 'Python', 'Node.js', 'FastAPI'].map((tech) => (
-                    <span key={tech} className="inline-flex items-center px-3 py-1 text-xs font-medium bg-white/[0.05] text-white/70 border border-white/[0.1] rounded-full hover:bg-[#dc2626]/10 hover:border-[#dc2626]/30 hover:text-white transition-all duration-300">
+                    <span key={tech} className="inline-flex items-center px-3 py-1 text-xs font-medium bg-white/[0.05] text-white/70 border border-white/[0.1] rounded-full hover:bg-[#991b1b]/15 hover:border-[#b91c1c]/30 hover:text-white transition-all duration-300">
                       {tech}
                     </span>
                   ))}
@@ -310,16 +310,16 @@ export default function Home() {
               {/* Social Links - Glowing icons with red accent */}
               <div className="flex items-center gap-5">
                 <a href="mailto:me@dhafezi.com" className="group relative" aria-label="Email">
-                  <div className="absolute inset-0 bg-[#dc2626]/25 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <Mail size={22} className="relative text-white/50 group-hover:text-[#dc2626] transition-colors duration-300" />
+                  <div className="absolute inset-0 bg-[#b91c1c]/25 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <Mail size={22} className="relative text-white/50 group-hover:text-[#f87171] transition-colors duration-300" />
                 </a>
                 <a href="https://github.com/DanielHafezi" target="_blank" rel="noopener noreferrer" className="group relative" aria-label="GitHub">
-                  <div className="absolute inset-0 bg-[#f97316]/25 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <Github size={22} className="relative text-white/50 group-hover:text-[#f97316] transition-colors duration-300" />
+                  <div className="absolute inset-0 bg-[#dc2626]/25 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <Github size={22} className="relative text-white/50 group-hover:text-[#f87171] transition-colors duration-300" />
                 </a>
                 <a href="https://www.linkedin.com/in/danielhafezi" target="_blank" rel="noopener noreferrer" className="group relative" aria-label="LinkedIn">
-                  <div className="absolute inset-0 bg-[#f97316]/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <Linkedin size={22} className="relative text-white/50 group-hover:text-[#f97316] transition-colors duration-300" />
+                  <div className="absolute inset-0 bg-[#dc2626]/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <Linkedin size={22} className="relative text-white/50 group-hover:text-[#f87171] transition-colors duration-300" />
                 </a>
               </div>
 
@@ -328,14 +328,14 @@ export default function Home() {
                 <h3 className="font-semibold mb-4 text-xs uppercase tracking-[0.2em] text-white/40">Experience</h3>
                 <div className="space-y-4">
                   <div className="flex items-start group">
-                    <div className="w-2 h-2 rounded-full bg-gradient-to-r from-[#dc2626] to-[#fbe2a7] mt-2 mr-3 group-hover:scale-125 transition-transform" />
+                    <div className="w-2 h-2 rounded-full bg-gradient-to-r from-[#b91c1c] to-[#ef4444] mt-2 mr-3 group-hover:scale-125 transition-transform" />
                     <div>
                       <p className="font-medium text-sm text-white/80">Full Stack Developer, Bahamta</p>
                       <p className="text-xs text-white/40">Sep 2021 - Feb 2023</p>
                     </div>
                   </div>
                   <div className="flex items-start group">
-                    <div className="w-2 h-2 rounded-full bg-gradient-to-r from-[#dc2626] to-[#f97316] mt-2 mr-3 group-hover:scale-125 transition-transform" />
+                    <div className="w-2 h-2 rounded-full bg-gradient-to-r from-[#991b1b] to-[#dc2626] mt-2 mr-3 group-hover:scale-125 transition-transform" />
                     <div>
                       <p className="font-medium text-sm text-white/80">Python Developer, Fandogh PaaS</p>
                       <p className="text-xs text-white/40">Oct 2020 - Aug 2021</p>
@@ -348,20 +348,20 @@ export default function Home() {
 
           {/* Right Column - Projects with Timeline */}
           <div className="col-span-1 lg:col-span-8 space-y-8 relative order-2 lg:order-2">
-            <p className="text-xs uppercase tracking-[0.3em] text-[#f97316]/80 font-medium mb-2">Projects</p>
+            <p className="text-xs uppercase tracking-[0.3em] text-[#f87171]/80 font-medium mb-2">Projects</p>
 
             {/* Two-Column Projects Grid with Timeline */}
             <div className="relative">
               {/* Center Timeline Line (Desktop) - Red to orange gradient */}
               <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] hidden md:block" aria-hidden="true">
-                <div className="absolute inset-0 bg-gradient-to-b from-[#dc2626]/50 via-[#f97316]/40 to-[#dc2626]/20" />
-                <div className="absolute inset-0 bg-gradient-to-b from-[#dc2626]/25 via-[#f97316]/20 to-transparent blur-sm" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#b91c1c]/50 via-[#dc2626]/40 to-[#991b1b]/20" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#dc2626]/25 via-[#b91c1c]/20 to-transparent blur-sm" />
               </div>
 
               {/* Left Timeline Line (Mobile) - Red to orange gradient */}
               <div className="absolute left-[23px] top-0 bottom-0 w-[2px] md:hidden" aria-hidden="true">
-                <div className="absolute inset-0 bg-gradient-to-b from-[#dc2626]/50 via-[#f97316]/40 to-[#dc2626]/20" />
-                <div className="absolute inset-0 bg-gradient-to-b from-[#dc2626]/25 via-[#f97316]/20 to-transparent blur-sm" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#b91c1c]/50 via-[#dc2626]/40 to-[#991b1b]/20" />
+                <div className="absolute inset-0 bg-gradient-to-b from-[#dc2626]/25 via-[#b91c1c]/20 to-transparent blur-sm" />
               </div>
 
               {/* Render annotations with their projects */}

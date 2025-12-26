@@ -106,7 +106,7 @@ export function ProjectCard({
         className={cn(
           "relative overflow-hidden h-full flex flex-col transition-all duration-300 group",
           "bg-[#1f1f1f] border-0", // Removed default border
-          "hover:shadow-[0_0_60px_rgba(251,146,60,0.25),0_0_30px_rgba(239,68,68,0.2)]",
+          "hover:shadow-[0_0_60px_rgba(185,28,28,0.25),0_0_30px_rgba(153,27,27,0.2)]",
           featured && "ring-0", // Removed default ring
           collapsible && "cursor-pointer md:cursor-default"
         )}
@@ -116,7 +116,7 @@ export function ProjectCard({
           className="hidden md:block absolute inset-0 z-10 rounded-lg pointer-events-none transition-opacity duration-300"
           style={{
             opacity: "var(--spotlight-opacity, 0)",
-            background: "radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(251, 146, 60, 1), rgba(249, 115, 22, 0.8), rgba(239, 68, 68, 0.6), transparent 50%)",
+            background: "radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(248, 113, 113, 1), rgba(239, 68, 68, 0.8), rgba(220, 38, 38, 0.6), transparent 50%)",
             WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
             WebkitMaskComposite: "xor",
             maskComposite: "exclude",
@@ -129,7 +129,7 @@ export function ProjectCard({
           className="hidden md:block absolute inset-0 z-[5] rounded-lg pointer-events-none transition-opacity duration-300"
           style={{
             opacity: "var(--spotlight-opacity, 0)",
-            background: "radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(251, 146, 60, 0.15), rgba(239, 68, 68, 0.08), transparent 60%)",
+            background: "radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(220, 38, 38, 0.15), rgba(185, 28, 28, 0.08), transparent 60%)",
           }}
         />
 
@@ -137,25 +137,25 @@ export function ProjectCard({
         <div
           className={cn(
             "absolute inset-0 pointer-events-none z-20 rounded-lg border-2 transition-colors duration-300",
-            "border-[#333]/60 group-hover:border-[#dc2626]/60",
-            featured && "border-[#dc2626]/40"
+            "border-[#333]/60 group-hover:border-[#b91c1c]/60",
+            featured && "border-[#b91c1c]/40"
           )}
           style={{ filter: 'url(#rough-border)' }}
         />
 
         {/* Enhanced card background effects with red/orange */}
         <div className="absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" aria-hidden="true">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#dc2626]/[0.06] via-transparent to-[#f97316]/[0.04]" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#991b1b]/[0.08] via-transparent to-[#b91c1c]/[0.05]" />
         </div>
 
         {featured && (
           <div
             className="absolute top-3 left-3 z-10 inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[10px] font-medium
-            bg-gradient-to-r from-[#dc2626]/25 to-[#f97316]/20 backdrop-blur-sm
-            text-white/90 border border-[#dc2626]/30"
+            bg-gradient-to-r from-[#991b1b]/25 to-[#b91c1c]/20 backdrop-blur-sm
+            text-white/90 border border-[#b91c1c]/30"
             aria-label="Featured project"
           >
-            <Star size={12} className="text-[#f97316] animate-pulse" />
+            <Star size={12} className="text-[#f87171] animate-pulse" />
             Featured
           </div>
         )}
@@ -219,7 +219,7 @@ export function ProjectCard({
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="inline-flex items-center px-3 py-1 text-xs bg-white/[0.03] text-white/70 border border-white/[0.1] rounded-full hover:bg-[#dc2626]/10 hover:text-white hover:border-[#dc2626]/30 transition-all duration-200"
+                className="inline-flex items-center px-3 py-1 text-xs bg-white/[0.03] text-white/70 border border-white/[0.1] rounded-full hover:bg-[#991b1b]/15 hover:text-white hover:border-[#b91c1c]/30 transition-all duration-200"
               >
                 {getLinkIcon(link.text)}
                 {link.text}
