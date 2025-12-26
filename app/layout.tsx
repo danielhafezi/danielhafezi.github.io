@@ -1,12 +1,12 @@
 import "./globals.css"
 import type { Metadata } from "next"
-import { Poppins, Lora, Fira_Code, Caveat } from "next/font/google"
+import { IBM_Plex_Mono, Caveat } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
 
-const poppins = Poppins({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], variable: "--font-sans" })
-const lora = Lora({ subsets: ["latin"], variable: "--font-display" })
-const firaCode = Fira_Code({ subsets: ["latin"], variable: "--font-mono" })
+const ibmPlexMono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], variable: "--font-sans" })
+const ibmPlexMonoDisplay = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-display" })
+const ibmPlexMonoCode = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-mono" })
 const caveat = Caveat({ subsets: ["latin"], variable: "--font-handwriting" })
 
 export const metadata: Metadata = {
@@ -24,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn(poppins.variable, lora.variable, firaCode.variable, caveat.variable, "min-h-screen antialiased font-sans")}>
+      <body className={cn(ibmPlexMono.variable, ibmPlexMonoDisplay.variable, ibmPlexMonoCode.variable, caveat.variable, "min-h-screen antialiased font-sans")}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

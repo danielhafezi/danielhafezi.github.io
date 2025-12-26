@@ -276,7 +276,7 @@ export default function Home() {
                   <Typewriter
                     options={{
                       strings: [
-                        'Specializing in AI & GenAI-infused applications',
+                        'Specializing in AI & GenAI-infused apps',
                         'Building with modern AI integration techniques',
                         'Rapid web and AI application deployment'
                       ],
