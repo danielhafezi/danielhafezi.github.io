@@ -257,7 +257,7 @@ export default function Home() {
                     <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden ring-2 ring-white/10 group-hover:ring-white/20 transition-all duration-300">
                       <img
                         src="/ProfilePicture.webp"
-                        alt="Daniel Hafezian"
+                        alt="Daniel Hafezi"
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -267,7 +267,7 @@ export default function Home() {
                 <h1 className="text-5xl md:text-6xl font-sans font-bold tracking-tight">
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/60">Daniel</span>
                   <br />
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#dc2626] to-[#f87171]">Hafezian</span>
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#dc2626] to-[#f87171]">Hafezi</span>
                 </h1>
                 <h2 className="text-xl md:text-2xl font-semibold text-white/90">
                   Full Stack Developer
@@ -317,7 +317,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-[#dc2626]/25 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <Github size={22} className="relative text-white/50 group-hover:text-[#f87171] transition-colors duration-300" />
                 </a>
-                <a href="https://www.linkedin.com/in/danielhafezi" target="_blank" rel="noopener noreferrer" className="group relative" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/dhafezi/" target="_blank" rel="noopener noreferrer" className="group relative" aria-label="LinkedIn">
                   <div className="absolute inset-0 bg-[#dc2626]/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <Linkedin size={22} className="relative text-white/50 group-hover:text-[#f87171] transition-colors duration-300" />
                 </a>
@@ -504,11 +504,11 @@ export default function Home() {
       <footer className="border-t border-white/[0.05] py-8 relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-white/30">© {currentYear} Daniel Hafezian. All rights reserved.</p>
+            <p className="text-sm text-white/30">© {currentYear} Daniel Hafezi. All rights reserved.</p>
             <div className="flex items-center gap-6">
               <a href="mailto:me@dhafezi.com" className="text-white/30 hover:text-white/60 transition-colors text-sm">Contact</a>
               <a href="https://github.com/DanielHafezi" target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-white/60 transition-colors text-sm">GitHub</a>
-              <a href="https://www.linkedin.com/in/danielhafezi" target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-white/60 transition-colors text-sm">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/dhafezi/" target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-white/60 transition-colors text-sm">LinkedIn</a>
             </div>
           </div>
         </div>

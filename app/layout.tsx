@@ -10,8 +10,8 @@ const firaCode = Fira_Code({ subsets: ["latin"], variable: "--font-mono" })
 const caveat = Caveat({ subsets: ["latin"], variable: "--font-handwriting" })
 
 export const metadata: Metadata = {
-  title: "Daniel Hafezian",
-  description: "Portfolio of Daniel Hafezian, Full Stack Developer specializing in React, Next.js, and AI applications",
+  title: "Daniel Hafezi",
+  description: "Portfolio of Daniel Hafezi, Full Stack Developer specializing in React, Next.js, and AI applications",
   icons: {
     icon: '/sparkle.svg',
   },

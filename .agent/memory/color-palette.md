@@ -30,7 +30,7 @@ Hardcoded hex colors used for:
 - Floating orbs (lines ~46-48): `bg-[#22d3ee]/20`, `bg-[#6366f1]/20`, `bg-[#1e293b]/50`
 - Cursor spotlight radial gradient (line ~59)
 - "About Me" label: `text-[#22d3ee]/80`
-- "Hafezian" gradient text: `from-[#22d3ee] via-[#6366f1] to-[#1e293b]`
+- "Hafezi" gradient text: `from-[#22d3ee] via-[#6366f1] to-[#1e293b]`
 - Social icon hovers
 - Experience dots
 - "Projects" label
