@@ -14,7 +14,7 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   { href: "https://github.com/DanielHafezi", label: "GitHub", Icon: Github, external: true },
-  { href: "mailto:danielhafezian@gmail.com", label: "Contact", Icon: Mail },
+  { href: "mailto:me@dhafezi.com", label: "Contact", Icon: Mail },
 ]
 
 export function MainNav() {

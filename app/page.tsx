@@ -309,7 +309,7 @@ export default function Home() {
 
               {/* Social Links - Glowing icons with red accent */}
               <div className="flex items-center gap-5">
-                <a href="mailto:danielhafezian@gmail.com" className="group relative" aria-label="Email">
+                <a href="mailto:me@dhafezi.com" className="group relative" aria-label="Email">
                   <div className="absolute inset-0 bg-[#dc2626]/25 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <Mail size={22} className="relative text-white/50 group-hover:text-[#dc2626] transition-colors duration-300" />
                 </a>
@@ -506,7 +506,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-white/30">© {currentYear} Daniel Hafezian. All rights reserved.</p>
             <div className="flex items-center gap-6">
-              <a href="mailto:danielhafezian@gmail.com" className="text-white/30 hover:text-white/60 transition-colors text-sm">Contact</a>
+              <a href="mailto:me@dhafezi.com" className="text-white/30 hover:text-white/60 transition-colors text-sm">Contact</a>
               <a href="https://github.com/DanielHafezi" target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-white/60 transition-colors text-sm">GitHub</a>
               <a href="https://www.linkedin.com/in/danielhafezi" target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-white/60 transition-colors text-sm">LinkedIn</a>
             </div>
