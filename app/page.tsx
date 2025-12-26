@@ -249,7 +249,7 @@ export default function Home() {
                 <p className="text-xs uppercase tracking-[0.3em] text-[#f87171]/80 font-medium">About Me</p>
 
                 {/* Profile Picture */}
-                <div className="flex justify-center lg:justify-start mb-2">
+                <div className="flex justify-start mb-2">
                   <div className="relative group">
                     {/* Glow effect */}
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#991b1b] to-[#dc2626] rounded-2xl blur-md opacity-40 group-hover:opacity-60 transition-opacity duration-300" />
