@@ -256,7 +256,7 @@ export default function Home() {
                     {/* Image container */}
                     <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden ring-2 ring-white/10 group-hover:ring-white/20 transition-all duration-300">
                       <img
-                        src="/ProfilePicture.png"
+                        src="/ProfilePicture.webp"
                         alt="Daniel Hafezian"
                         className="w-full h-full object-cover"
                       />
