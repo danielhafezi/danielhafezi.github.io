@@ -265,14 +265,57 @@ export function SearchDoodle({ className = "" }: DoodleProps) {
     );
 }
 
+// Mosque with crescent moon - for Istanbul tourism
+export function MosqueDoodle({ className = "" }: DoodleProps) {
+    const { ref, isAnimated } = useDrawOnScroll({ threshold: 0.4 });
+
+    return (
+        <svg
+            ref={ref}
+            className={`w-20 h-20 text-red-500/40 ${className} svg-draw-doodle ${isAnimated ? 'svg-draw-animated' : 'svg-draw-initial'}`}
+            style={{ '--path-length': '350' } as React.CSSProperties}
+            viewBox="0 0 100 100"
+            fill="none"
+        >
+            {/* Main dome */}
+            <path
+                d="M25 55 C25 35, 35 20, 50 20 C65 20, 75 35, 75 55"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                fill="none"
+            />
+            {/* Dome top finial */}
+            <path d="M50 20 L50 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            <circle cx="50" cy="10" r="3" stroke="currentColor" strokeWidth="1.5" fill="none" />
+            {/* Base structure */}
+            <path d="M20 55 L80 55 L80 85 L20 85 L20 55" stroke="currentColor" strokeWidth="2" fill="none" />
+            {/* Minaret left */}
+            <path d="M12 85 L12 40 L18 40 L18 85" stroke="currentColor" strokeWidth="2" fill="none" />
+            <path d="M10 40 L15 32 L20 40" stroke="currentColor" strokeWidth="1.5" fill="none" />
+            {/* Minaret right */}
+            <path d="M82 85 L82 40 L88 40 L88 85" stroke="currentColor" strokeWidth="2" fill="none" />
+            <path d="M80 40 L85 32 L90 40" stroke="currentColor" strokeWidth="1.5" fill="none" />
+            {/* Door */}
+            <path d="M42 85 L42 68 C42 63, 50 63, 58 63 C58 63, 58 63, 58 68 L58 85" stroke="currentColor" strokeWidth="1.5" fill="none" />
+            {/* Crescent moon */}
+            <path d="M78 15 C82 15, 85 18, 85 22 C85 26, 82 29, 78 29 C82 27, 83 23, 83 22 C83 19, 82 17, 78 15" stroke="currentColor" strokeWidth="1.5" fill="none" />
+            {/* Stars */}
+            <circle cx="70" cy="8" r="1.5" fill="currentColor" />
+            <circle cx="92" cy="12" r="1" fill="currentColor" />
+        </svg>
+    );
+}
+
 // Map for easy lookup by annotation index
 export const annotationDoodles: Record<number, React.FC<DoodleProps>> = {
     0: HeartDoodle,        // "built for my dad, when we needed clarity..."
-    1: PrivacyDoodle,      // "frustrated with data leaks..."
-    2: GraduationDoodle,   // "my dissertation—proving small models..."
-    3: BrainDoodle,        // "asking: what if AI could really understand people?"
-    4: ChartDoodle,        // "crypto was chaos..."
-    5: RocketDoodle,       // "the startup that taught me everything..."
-    6: BooksDoodle,        // "MSc Computing coursework—all A+"
-    7: SearchDoodle,       // "scraping my way to a scholarship"
+    1: MosqueDoodle,       // "helping Iranian tourists navigate Istanbul..."
+    2: PrivacyDoodle,      // "frustrated with data leaks..."
+    3: GraduationDoodle,   // "my dissertation—proving small models..."
+    4: BrainDoodle,        // "asking: what if AI could really understand people?"
+    5: ChartDoodle,        // "crypto was chaos..."
+    6: RocketDoodle,       // "the startup that taught me everything..."
+    7: BooksDoodle,        // "MSc Computing coursework—all A+"
+    8: SearchDoodle,       // "scraping my way to a scholarship"
 };

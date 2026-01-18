@@ -28,9 +28,15 @@ export const timelineAnnotations: TimelineAnnotation[] = [
   },
   {
     type: 'arrow',
+    text: 'helping Iranian tourists navigate Istanbul with AI that speaks their language',
+    projectTitles: ['Istanbul Tour Persian Guide: AI-Powered Tourism Management Platform'],
+    side: 'right'
+  },
+  {
+    type: 'arrow',
     text: 'frustrated with data leaks and slow UIs in every AI chat',
     projectTitles: ['JustBYOK: Bring Your Own Key AI Chat Platform'],
-    side: 'right'
+    side: 'left'
   },
   {
     type: 'arrow',
@@ -101,6 +107,30 @@ export const projects: Project[] = [
       alt: "MedChronos AI-Powered Medical Imaging Timeline Demo"
     },
     categories: ["AI & Machine Learning", "Health Tech", "Web Applications & Platforms"],
+    featured: true
+  },
+
+  // Istanbul Tour Persian Guide Project
+  {
+    title: "Istanbul Tour Persian Guide: AI-Powered Tourism Management Platform",
+    description: [
+      "A comprehensive Persian-language tourism platform for Iranian tourists visiting Istanbul. Features a public travel guide with tours, shopping, medical tourism, and currency exchange, alongside a full admin panel with role-based access control for business operations management.",
+      "Integrates an AI-powered Telegram bot using Google Gemini 2.0 Flash that automatically parses booking messages from tour leaders in Persian/Finglish, extracts structured data (dates, passenger counts, hotels, prices), creates customer accounts, and manages booking updates through reply detection. The LLM handles complex parsing including hotel name normalization, multi-leader commission splits, and cancellation workflows."
+    ],
+    technologies: [
+      { name: "React 18" }, { name: "TypeScript" }, { name: "Tailwind CSS" }, { name: "shadcn/ui" },
+      { name: "Supabase" }, { name: "PostgreSQL" }, { name: "Edge Functions" }, { name: "Deno" },
+      { name: "Google Gemini" }, { name: "Telegram Bot API" }, { name: "React Query" }, { name: "Recharts" },
+      { name: "Framer Motion" }, { name: "Jalali Calendar" }
+    ],
+    links: [
+      { text: "Website", url: "https://istanbultoursgroup.net/" }
+    ],
+    image: {
+      src: "/IstanbulTourGuide.png",
+      alt: "Istanbul Tour Persian Guide Platform Demo"
+    },
+    categories: ["AI & Machine Learning", "Web Applications & Platforms"],
     featured: true
   },
 
