@@ -28,7 +28,7 @@ export const timelineAnnotations: TimelineAnnotation[] = [
   },
   {
     type: 'arrow',
-    text: 'helping Iranian tourists navigate Istanbul with AI that speaks their language',
+    text: 'a client project—AI that speaks Persian to help tourists navigate Istanbul',
     projectTitles: ['Istanbul Tour Persian Guide: AI-Powered Tourism Management Platform'],
     side: 'right'
   },
@@ -115,7 +115,7 @@ export const projects: Project[] = [
     title: "Istanbul Tour Persian Guide: AI-Powered Tourism Management Platform",
     description: [
       "A comprehensive Persian-language tourism platform for Iranian tourists visiting Istanbul. Features a public travel guide with tours, shopping, medical tourism, and currency exchange, alongside a full admin panel with role-based access control for business operations management.",
-      "Integrates an AI-powered Telegram bot using Google Gemini 2.0 Flash that automatically parses booking messages from tour leaders in Persian/Finglish, extracts structured data (dates, passenger counts, hotels, prices), creates customer accounts, and manages booking updates through reply detection. The LLM handles complex parsing including hotel name normalization, multi-leader commission splits, and cancellation workflows."
+      "Integrates an AI-powered Telegram bot using Google Gemini 3.0 Flash that automatically parses booking messages from tour leaders in Persian/Finglish, extracts structured data (dates, passenger counts, hotels, prices), creates customer accounts, and manages booking updates through reply detection. The LLM handles complex parsing including hotel name normalization, multi-leader commission splits, and cancellation workflows."
     ],
     technologies: [
       { name: "React 18" }, { name: "TypeScript" }, { name: "Tailwind CSS" }, { name: "shadcn/ui" },
@@ -160,7 +160,7 @@ export const projects: Project[] = [
   {
     title: "Interactive Policy Explorer: Economic Policy Simulation",
     description: [
-      "A Next.js application that demonstrates the capabilities of Large Language Models (specifically Google's Gemini Flash 2) in economic policy simulation.",
+      "A Next.js application that demonstrates the capabilities of Large Language Models (specifically Google's Gemini Flash 3) in economic policy simulation.",
       "This tool allows users to explore how various economic and technological transition policies might impact different socio-economic groups through an intuitive visual interface with customizable policy configurations, socio-economic group selection, and interactive visualizations."
     ],
     technologies: [
@@ -182,7 +182,7 @@ export const projects: Project[] = [
     title: "PerspectiView: Transform Narratives Into Perspectives",
     description: [
       "A web application that transforms third-person narratives into multiple first-person perspectives, helping users understand how different characters experience the same events in stories.",
-      "Using Google's Gemini 2.0 Flash model for analysis, the application automatically identifies characters, generates perspective-based retellings, and creates visual timelines showing emotional and perceptual variations across characters."
+      "Using Google's Gemini 3.0 Flash model for analysis, the application automatically identifies characters, generates perspective-based retellings, and creates visual timelines showing emotional and perceptual variations across characters."
     ],
     technologies: [
       { name: "Next.js" }, { name: "React" }, { name: "TypeScript" }, { name: "Tailwind CSS" },
